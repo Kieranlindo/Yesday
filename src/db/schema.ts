@@ -64,7 +64,7 @@ export const venues = pgTable('venues', {
   practical: jsonb('practical').$type<[string, string][]>().notNull().default(sql`'[]'::jsonb`),
   rules: jsonb('rules').$type<Record<string, string>>().notNull().default(sql`'{}'::jsonb`),
   policy: policyEnum('policy').notNull().default('Moderate'),
-  depositPercent: integer('deposit_percent').notNull().default(15),
+  depositPercent: integer('deposit_percent').notNull().default(20),
   managerName: text('manager_name').notNull(),
   managerPhoto: text('manager_photo'),
   createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
@@ -122,8 +122,46 @@ export const tours = pgTable('tours', {
   toSee: text('to_see').array().notNull().default(sql`'{}'::text[]`),
   status: tourStatusEnum('status').notNull().default('booked'),
   rating: integer('rating'),
+  /** The package the couple built, frozen when they booked the tour, so the venue sees exactly that. */
+  packageCodes: text('package_codes').array().notNull().default(sql`'{}'::text[]`),
+  totalPence: integer('total_pence'),
+  note: text('note'),
+  /** The wedding date is held for the couple until this moment (24 hours after the tour). */
+  holdUntil: timestamp('hold_until', { withTimezone: true }),
+  verdict: text('verdict'), // love | maybe | no, after the tour
+  feedback: text('feedback'),
   createdAt: timestamp('created_at', { withTimezone: true }).notNull().defaultNow(),
+}, t => [index('tours_couple_idx').on(t.coupleId, t.startsAt)]);
+
+/** What a couple has told us about their day. One row per couple account. */
+export const plans = pgTable('plans', {
+  userId: uuid('user_id').primaryKey().references(() => users.id, { onDelete: 'cascade' }),
+  lastName: text('last_name'),
+  weddingDate: date('wedding_date'),
+  /** Flexible dates: preferred day of the week (0 Sunday to 6 Saturday) and months as "YYYY-MM". */
+  flexDow: integer('flex_dow'),
+  flexMonths: text('flex_months').array().notNull().default(sql`'{}'::text[]`),
+  guests: integer('guests').notNull().default(80),
+  eveningGuests: integer('evening_guests').notNull().default(30),
+  area: text('area').notNull().default('London'),
+  budgetPence: integer('budget_pence'),
+  styles: text('styles').array().notNull().default(sql`'{}'::text[]`),
+  needs: text('needs').array().notNull().default(sql`'{}'::text[]`),
+  updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
 });
+
+/** The package a couple is building at a venue. Saved as they go, one per couple per venue. */
+export const packages = pgTable('packages', {
+  coupleId: uuid('couple_id').notNull().references(() => users.id, { onDelete: 'cascade' }),
+  venueId: uuid('venue_id').notNull().references(() => venues.id, { onDelete: 'cascade' }),
+  codes: text('codes').array().notNull().default(sql`'{}'::text[]`),
+  weddingDate: date('wedding_date').notNull(),
+  guests: integer('guests').notNull(),
+  eveningGuests: integer('evening_guests').notNull().default(0),
+  kids: integer('kids').notNull().default(0),
+  totalPence: integer('total_pence').notNull(),
+  updatedAt: timestamp('updated_at', { withTimezone: true }).notNull().defaultNow(),
+}, t => [primaryKey({ columns: [t.coupleId, t.venueId] })]);
 
 /* ---------- bookings and money ---------- */
 export const bookings = pgTable('bookings', {
@@ -195,3 +233,6 @@ export type Venue = typeof venues.$inferSelect;
 export type VenueOption = typeof venueOptions.$inferSelect;
 export type VenuePhoto = typeof venuePhotos.$inferSelect;
 export type User = typeof users.$inferSelect;
+export type Plan = typeof plans.$inferSelect;
+export type Tour = typeof tours.$inferSelect;
+export type SavedPackage = typeof packages.$inferSelect;
