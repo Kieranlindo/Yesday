@@ -3,7 +3,7 @@ import { and, asc, desc, eq, gte, inArray } from 'drizzle-orm';
 import { db, schema } from '@/db';
 import { hireForDay, packageTotal, STARTER_PACKAGE, type PricedOption } from './rules';
 
-export type SearchInput = { area: string; day: string; guests: number; evening: number; sort: 'rec' | 'price' | 'cap'; maxPence?: number };
+export type SearchInput = { area: string; day: string; guests: number; evening: number; sort: 'rec' | 'price' | 'cap'; maxPence?: number; needs?: string[]; styles?: string[] };
 
 export type VenueCardData = {
   id: string; slug: string; name: string; place: string; style: string | null; capacityDinner: number;
@@ -52,15 +52,16 @@ async function cardsFor(vs: (typeof schema.venues.$inferSelect)[], q: Q): Promis
 
 /** Live venues in an area that seat the guests, priced for the day, with taken dates left out. */
 export async function searchVenues(q: SearchInput) {
-  const vs = await db.select().from(schema.venues)
+  const all = await db.select().from(schema.venues)
     .where(and(eq(schema.venues.status, 'live'), eq(schema.venues.area, q.area), gte(schema.venues.capacityDinner, q.guests)))
     .orderBy(asc(schema.venues.createdAt), asc(schema.venues.name));
+  const vs = all.filter(v => (!q.styles?.length || q.styles.includes(v.style ?? '')) && (q.needs ?? []).every(n => v.features.includes(n)));
   const cards = await cardsFor(vs, q);
   const free = cards.filter(c => c.free);
   let list = q.maxPence ? free.filter(c => c.fullDayPence <= q.maxPence!) : free;
   if (q.sort === 'price') list = [...list].sort((a, b) => a.fullDayPence - b.fullDayPence);
   if (q.sort === 'cap') list = [...list].sort((a, b) => b.capacityDinner - a.capacityDinner);
-  return { list, takenCount: cards.length - free.length, hiddenByBudget: free.length - list.length };
+  return { list, takenCount: cards.length - free.length, hiddenByBudget: free.length - list.length, hiddenByFilters: all.length - vs.length };
 }
 
 /** Every live venue a couple has liked, newest first, priced for their day whether or not it is free. */

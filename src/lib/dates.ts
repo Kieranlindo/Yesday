@@ -30,3 +30,32 @@ export function suggestedDate(from = londonToday()) {
     y++;
   }
 }
+
+/** The UTC instant for a wall-clock time in London on a given day (handles BST). */
+export function londonInstant(day: string, hhmm: string) {
+  const [h, m] = hhmm.split(':').map(Number);
+  const guess = new Date(`${day}T${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:00Z`);
+  const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/London', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(guess);
+  const lh = Number(parts.find(p => p.type === 'hour')!.value), lm = Number(parts.find(p => p.type === 'minute')!.value);
+  const offsetMin = (lh * 60 + lm) - (h * 60 + m);
+  return new Date(guess.getTime() - offsetMin * 60_000);
+}
+
+/** "11:30" and day parts of an instant, in London. */
+export function londonParts(d: Date) {
+  const f = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/London', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(d);
+  const g = (t: string) => f.find(p => p.type === t)!.value;
+  return { day: `${g('year')}-${g('month')}-${g('day')}`, time: `${g('hour')}:${g('minute')}` };
+}
+
+/** "11:30" as "11.30am", the way we write times. */
+export const niceTime = (hhmm: string) => { const [h, m] = hhmm.split(':').map(Number); return `${h % 12 || 12}${m ? `.${String(m).padStart(2, '0')}` : ''}${h < 12 ? 'am' : 'pm'}`; };
+
+/** Days a venue shows couples round: the next ten Wednesdays to Sundays, starting two days from now. */
+export const TOUR_TIMES = ['10:00', '11:30', '14:00', '16:00', '18:30'];
+export function tourDays(from = londonToday(), count = 10) {
+  const out: string[] = [];
+  let d = addDays(from, 2);
+  while (out.length < count) { const w = weekday(d); if (w === 0 || w >= 3) out.push(d); d = addDays(d, 1); }
+  return out;
+}

@@ -11,10 +11,16 @@ import { roundTo } from './money';
 export const FEE_BP = 800;
 export const FOUNDING_FEE_BP = 500;
 
-/** Deposits: a small share of the total, as consumer law expects. Venues choose within this range. */
-export const DEPOSIT_MIN_PERCENT = 10;
-export const DEPOSIT_DEFAULT_PERCENT = 15;
-export const DEPOSIT_MAX_PERCENT = 25;
+/**
+ * Deposits: at least 20% of the package on every venue, so whatever a venue keeps
+ * if a couple cancels always covers our fee. Venues may ask for more, up to half.
+ */
+export const DEPOSIT_MIN_PERCENT = 20;
+export const DEPOSIT_DEFAULT_PERCENT = 20;
+export const DEPOSIT_MAX_PERCENT = 50;
+
+/** Children's menu, per child under 12. */
+export const KIDS_MENU_PENCE = 2500;
 
 /** How long a date is held while a couple checks out, and after a tour. */
 export const CHECKOUT_HOLD_MINUTES = 15;
@@ -52,11 +58,11 @@ export const lineTotal = (o: Pick<PricedOption, 'pricePence' | 'unit'>, guests: 
 /** What a couple starts with before they change anything: the "full day" price shown in search. */
 export const STARTER_PACKAGE = ['hire', 'cer_room', 'can3', 'dinner3', 'd_classic', 'dj', 'lights', 'suite'];
 
-export function packageTotal(options: PricedOption[], codes: string[], day: string, hireBasePence: number, guests: number, evening: number, hireOverride?: number | null) {
+export function packageTotal(options: PricedOption[], codes: string[], day: string, hireBasePence: number, guests: number, evening: number, hireOverride?: number | null, kids = 0) {
   return options.filter(o => codes.includes(o.code)).reduce((sum, o) => {
     if (o.code === 'hire') return sum + hireForDay(hireBasePence, day, hireOverride);
     return sum + lineTotal(o, guests, evening);
-  }, 0);
+  }, 0) + kids * KIDS_MENU_PENCE;
 }
 
 export function depositFor(totalPence: number, venuePercent: number) {
@@ -82,27 +88,30 @@ export function instalments(totalPence: number, depositPence: number, bookedOn: 
 
 export type Policy = 'Flexible' | 'Moderate' | 'Strict';
 export const POLICY_TEXT: Record<Policy, string> = {
-  Flexible: 'Cancel at least 3 months before and get your deposit back, apart from 4% of the package. After that, the deposit isn’t refundable.',
+  Flexible: 'Cancel at least 3 months before and get your deposit back, apart from 8% of the package. After that, the deposit isn’t refundable.',
   Moderate: 'Cancel at least 6 months before and get half your deposit back. After that, the deposit isn’t refundable.',
   Strict: 'The deposit isn’t refundable. Payments after the deposit are refunded if you cancel 9 months or more before.',
 };
 export const POLICY_EARLY_MONTHS: Record<Policy, number> = { Flexible: 3, Moderate: 6, Strict: 9 };
 
+/** Under a Flexible policy, the venue keeps this share of the package on an early cancellation. */
+export const FLEXIBLE_KEEP_BP = 800;
+
 /**
- * Who ends up with what when a couple cancels. We take our full fee at booking,
- * and credit half of it back to the venue if the couple cancels, so the venue is
- * never out of pocket. Late-cancellation refunds of instalments follow the venue's
- * published sliding scale; here we return the most the venue may keep.
+ * Who ends up with what when a couple cancels. Our fee is taken once, at booking,
+ * and is never refunded: it always comes out of what the venue keeps. So a couple
+ * can never get back more than they've paid less our fee, and the minimum 20% deposit
+ * makes sure that's always covered. Late-cancellation refunds of instalments follow
+ * the venue's published sliding scale; here we return the most the venue may keep.
  */
 export function coupleCancels(p: { policy: Policy; totalPence: number; depositPence: number; feePence: number; paidPence: number; monthsBefore: number }) {
   const early = p.monthsBefore >= POLICY_EARLY_MONTHS[p.policy];
-  const credit = Math.round(p.feePence / 2);
   const instalmentsPaid = p.paidPence - p.depositPence;
   let depositBack = 0;
-  if (early && p.policy === 'Flexible') depositBack = Math.max(0, p.depositPence - Math.round(p.totalPence * 0.04));
+  if (early && p.policy === 'Flexible') depositBack = Math.max(0, p.depositPence - Math.max(p.feePence, Math.round(p.totalPence * FLEXIBLE_KEEP_BP / 10000)));
   if (early && p.policy === 'Moderate') depositBack = Math.round(p.depositPence / 2);
   const instalmentsBack = early ? instalmentsPaid : 0; // late: sliding scale decides, up to everything
-  const coupleBack = depositBack + instalmentsBack;
-  const yesday = p.feePence - credit;
-  return { early, coupleBack, venue: p.paidPence - coupleBack - yesday, yesday, creditToVenue: credit };
+  const coupleBack = Math.min(depositBack + instalmentsBack, Math.max(0, p.paidPence - p.feePence));
+  const venueKeeps = p.paidPence - coupleBack;
+  return { early, coupleBack, venueKeeps, yesday: p.feePence, venue: venueKeeps - p.feePence };
 }
