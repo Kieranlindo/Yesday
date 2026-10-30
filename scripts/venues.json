@@ -1,0 +1,2762 @@
+{
+ "venues": [
+  {
+   "id": "ornc",
+   "name": "Old Royal Naval College",
+   "place": "Greenwich, London",
+   "style": "Historic",
+   "cap": 300,
+   "hire": 12500,
+   "pp": 120,
+   "am": "Eleanor",
+   "policy": "Moderate",
+   "cuisine": [
+    "Seasonal British",
+    "Bespoke menus"
+   ],
+   "feats": [
+    "catering",
+    "veg",
+    "halal",
+    "outdoor",
+    "parking"
+   ],
+   "web": "https://ornc.org/venue-hire/weddings/",
+   "cerName": "Ceremony in the Chapel",
+   "about": "Wren’s riverside masterpiece in Greenwich. Marry in the chapel, then dine beneath the Painted Hall’s ceiling, often called Britain’s Sistine Chapel.",
+   "area": "London",
+   "rating": null,
+   "reviews": 0,
+   "sample": true,
+   "tone": [
+    "#EFEAE2",
+    "#CFC3B2"
+   ],
+   "n": 6,
+   "booked": [],
+   "use": "Painted Hall and Chapel",
+   "cerDetail": "Licensed for civil ceremonies. Includes chairs, an aisle runner and a table for the registrar.",
+   "hireDetail": "Your spaces at Old Royal Naval College for the day and evening, with tables, chairs, linen and the events team.",
+   "photoFiles": [
+    "ornc-1.jpg",
+    "ornc-2.jpg",
+    "ornc-3.jpg"
+   ],
+   "hasEmbeddedPhotos": false,
+   "options": [
+    {
+     "id": "hire",
+     "ch": "venue",
+     "name": "Venue hire",
+     "price": 12500,
+     "unit": "flat",
+     "detail": "Your spaces at Old Royal Naval College for the day and evening, with tables, chairs, linen and the events team.",
+     "req": true
+    },
+    {
+     "id": "cer_room",
+     "ch": "ceremony",
+     "name": "Ceremony in the Chapel",
+     "price": 600,
+     "unit": "flat",
+     "detail": "Licensed for civil ceremonies. Includes chairs, an aisle runner and a table for the registrar.",
+     "req": false
+    },
+    {
+     "id": "cer_garden",
+     "ch": "ceremony",
+     "name": "Garden ceremony",
+     "price": 750,
+     "unit": "flat",
+     "detail": "Outdoors in the gardens, with an indoor room kept ready in case it rains.",
+     "req": false
+    },
+    {
+     "id": "cer_none",
+     "ch": "ceremony",
+     "name": "Celebration only",
+     "price": 0,
+     "unit": "flat",
+     "detail": "You’re marrying somewhere else first, and joining your guests here afterwards.",
+     "req": false
+    },
+    {
+     "id": "quartet",
+     "ch": "ceremony",
+     "name": "String quartet",
+     "price": 550,
+     "unit": "flat",
+     "detail": "For your walk down the aisle and the drinks reception.",
+     "req": false
+    },
+    {
+     "id": "can3",
+     "ch": "ceremony",
+     "name": "Three canapés each",
+     "price": 9,
+     "unit": "pp",
+     "detail": "Passed round during the drinks reception. Chosen at your tasting.",
+     "req": false
+    },
+    {
+     "id": "can5",
+     "ch": "ceremony",
+     "name": "Five canapés each",
+     "price": 14,
+     "unit": "pp",
+     "detail": "A more generous reception, ideal if dinner is after 4pm.",
+     "req": false
+    },
+    {
+     "id": "dinner3",
+     "ch": "breakfast",
+     "name": "Three-course dinner",
+     "price": 120,
+     "unit": "pp",
+     "detail": "Seasonal starter, a choice of two mains and dessert. Halal and vegetarian versions of every course.",
+     "req": false
+    },
+    {
+     "id": "feast",
+     "ch": "breakfast",
+     "name": "Sharing feast",
+     "price": 114,
+     "unit": "pp",
+     "detail": "Platters down the middle of each table: slow-roast lamb, chicken, grains and salads, with a dessert table to finish.",
+     "req": false
+    },
+    {
+     "id": "d_none",
+     "ch": "drinks",
+     "name": "Pay at the bar",
+     "price": 0,
+     "unit": "pp",
+     "detail": "No package. Guests buy their own drinks from the venue bar.",
+     "req": false
+    },
+    {
+     "id": "d_classic",
+     "ch": "drinks",
+     "name": "Classic",
+     "price": 28,
+     "unit": "pp",
+     "detail": "A welcome drink, half a bottle of wine each with dinner, and sparkling wine for the toast.",
+     "req": false
+    },
+    {
+     "id": "d_sig",
+     "ch": "drinks",
+     "name": "Signature",
+     "price": 38,
+     "unit": "pp",
+     "detail": "Prosecco on arrival, premium wines with dinner, and champagne for the toast.",
+     "req": false
+    },
+    {
+     "id": "d_pres",
+     "ch": "drinks",
+     "name": "Prestige",
+     "price": 52,
+     "unit": "pp",
+     "detail": "Champagne all afternoon, wines chosen by a sommelier, and cocktails after dinner.",
+     "req": false
+    },
+    {
+     "id": "buffet",
+     "ch": "evening",
+     "name": "Evening buffet",
+     "price": 15,
+     "unit": "eve",
+     "detail": "Stone-baked pizzas or a grazing table from 8pm, for every evening guest.",
+     "req": false
+    },
+    {
+     "id": "dj",
+     "ch": "evening",
+     "name": "DJ, 7pm to midnight",
+     "price": 650,
+     "unit": "flat",
+     "detail": "The resident DJ with sound system and dance-floor lighting. Send your playlist in the app.",
+     "req": false
+    },
+    {
+     "id": "band",
+     "ch": "evening",
+     "name": "Live band",
+     "price": 1800,
+     "unit": "flat",
+     "detail": "A four-piece band for two 45-minute sets, with a DJ playlist in between.",
+     "req": false
+    },
+    {
+     "id": "dhol",
+     "ch": "evening",
+     "name": "Dhol drummers",
+     "price": 450,
+     "unit": "flat",
+     "detail": "Two drummers for your grand entrance, about 20 minutes.",
+     "req": false
+    },
+    {
+     "id": "lights",
+     "ch": "styling",
+     "name": "Uplighting and fairy lights",
+     "price": 400,
+     "unit": "flat",
+     "detail": "Warm-white uplighters in the ceremony room and hall, with a fairy-light canopy over the dance floor.",
+     "req": false
+    },
+    {
+     "id": "florals",
+     "ch": "styling",
+     "name": "Table flowers and a ceremony arch",
+     "price": 950,
+     "unit": "flat",
+     "detail": "Seasonal flowers for every table and an arch for your ceremony, by the venue’s florist.",
+     "req": false
+    },
+    {
+     "id": "candles",
+     "ch": "styling",
+     "name": "Candles and table styling",
+     "price": 300,
+     "unit": "flat",
+     "detail": "Candlesticks, glass holders and linen napkins in your colours.",
+     "req": false
+    },
+    {
+     "id": "rooms",
+     "ch": "stay",
+     "name": "Hold rooms for your guests",
+     "price": 0,
+     "unit": "flat",
+     "detail": "We’ll hold rooms nearby at a wedding rate. Guests book and pay for themselves.",
+     "req": false
+    }
+   ],
+   "rules": {
+    "finish": "Midnight",
+    "limiter": "Yes",
+    "confetti": "Petals, outdoors only",
+    "candles": "In glass holders",
+    "fire": "Not allowed",
+    "suppliers": "Welcome, if they’re insured",
+    "drinks": "Packages from the venue"
+   },
+   "policyText": "Cancel at least 6 months before and get half your deposit back. After that, the deposit isn’t refundable."
+  },
+  {
+   "id": "bh",
+   "name": "Banqueting House",
+   "place": "Whitehall, London",
+   "style": "Palace",
+   "cap": 300,
+   "hire": 15000,
+   "pp": 140,
+   "am": "Imogen",
+   "policy": "Strict",
+   "cuisine": [
+    "Bespoke menus",
+    "Seasonal British"
+   ],
+   "feats": [
+    "catering",
+    "veg",
+    "halal"
+   ],
+   "web": "https://www.hrp.org.uk/banqueting-house/hire-a-venue/weddings/",
+   "cerName": "Ceremony in the Undercroft",
+   "cerDetail": "The vaulted Undercroft is licensed for up to 150. Larger ceremonies can be held in the Main Hall, for up to 400.",
+   "about": "The last surviving part of the Palace of Whitehall, with a Rubens ceiling above the Main Hall. Up to 300 for dinner, in the heart of royal London.",
+   "area": "London",
+   "rating": null,
+   "reviews": 0,
+   "sample": true,
+   "tone": [
+    "#EFEAE2",
+    "#CFC3B2"
+   ],
+   "n": 6,
+   "booked": [],
+   "use": "Main Hall and Undercroft",
+   "hireDetail": "Your spaces at Banqueting House for the day and evening, with tables, chairs, linen and the events team.",
+   "photoFiles": [
+    "bh-1.jpg",
+    "bh-2.jpg",
+    "bh-3.jpg"
+   ],
+   "hasEmbeddedPhotos": false,
+   "options": [
+    {
+     "id": "hire",
+     "ch": "venue",
+     "name": "Venue hire",
+     "price": 15000,
+     "unit": "flat",
+     "detail": "Your spaces at Banqueting House for the day and evening, with tables, chairs, linen and the events team.",
+     "req": true
+    },
+    {
+     "id": "cer_room",
+     "ch": "ceremony",
+     "name": "Ceremony in the Undercroft",
+     "price": 600,
+     "unit": "flat",
+     "detail": "The vaulted Undercroft is licensed for up to 150. Larger ceremonies can be held in the Main Hall, for up to 400.",
+     "req": false
+    },
+    {
+     "id": "cer_none",
+     "ch": "ceremony",
+     "name": "Celebration only",
+     "price": 0,
+     "unit": "flat",
+     "detail": "You’re marrying somewhere else first, and joining your guests here afterwards.",
+     "req": false
+    },
+    {
+     "id": "quartet",
+     "ch": "ceremony",
+     "name": "String quartet",
+     "price": 550,
+     "unit": "flat",
+     "detail": "For your walk down the aisle and the drinks reception.",
+     "req": false
+    },
+    {
+     "id": "can3",
+     "ch": "ceremony",
+     "name": "Three canapés each",
+     "price": 9,
+     "unit": "pp",
+     "detail": "Passed round during the drinks reception. Chosen at your tasting.",
+     "req": false
+    },
+    {
+     "id": "can5",
+     "ch": "ceremony",
+     "name": "Five canapés each",
+     "price": 14,
+     "unit": "pp",
+     "detail": "A more generous reception, ideal if dinner is after 4pm.",
+     "req": false
+    },
+    {
+     "id": "dinner3",
+     "ch": "breakfast",
+     "name": "Three-course dinner",
+     "price": 140,
+     "unit": "pp",
+     "detail": "Seasonal starter, a choice of two mains and dessert. Halal and vegetarian versions of every course.",
+     "req": false
+    },
+    {
+     "id": "feast",
+     "ch": "breakfast",
+     "name": "Sharing feast",
+     "price": 134,
+     "unit": "pp",
+     "detail": "Platters down the middle of each table: slow-roast lamb, chicken, grains and salads, with a dessert table to finish.",
+     "req": false
+    },
+    {
+     "id": "d_none",
+     "ch": "drinks",
+     "name": "Pay at the bar",
+     "price": 0,
+     "unit": "pp",
+     "detail": "No package. Guests buy their own drinks from the venue bar.",
+     "req": false
+    },
+    {
+     "id": "d_classic",
+     "ch": "drinks",
+     "name": "Classic",
+     "price": 28,
+     "unit": "pp",
+     "detail": "A welcome drink, half a bottle of wine each with dinner, and sparkling wine for the toast.",
+     "req": false
+    },
+    {
+     "id": "d_sig",
+     "ch": "drinks",
+     "name": "Signature",
+     "price": 38,
+     "unit": "pp",
+     "detail": "Prosecco on arrival, premium wines with dinner, and champagne for the toast.",
+     "req": false
+    },
+    {
+     "id": "d_pres",
+     "ch": "drinks",
+     "name": "Prestige",
+     "price": 52,
+     "unit": "pp",
+     "detail": "Champagne all afternoon, wines chosen by a sommelier, and cocktails after dinner.",
+     "req": false
+    },
+    {
+     "id": "buffet",
+     "ch": "evening",
+     "name": "Evening buffet",
+     "price": 15,
+     "unit": "eve",
+     "detail": "Stone-baked pizzas or a grazing table from 8pm, for every evening guest.",
+     "req": false
+    },
+    {
+     "id": "dj",
+     "ch": "evening",
+     "name": "DJ, 7pm to midnight",
+     "price": 650,
+     "unit": "flat",
+     "detail": "The resident DJ with sound system and dance-floor lighting. Send your playlist in the app.",
+     "req": false
+    },
+    {
+     "id": "band",
+     "ch": "evening",
+     "name": "Live band",
+     "price": 1800,
+     "unit": "flat",
+     "detail": "A four-piece band for two 45-minute sets, with a DJ playlist in between.",
+     "req": false
+    },
+    {
+     "id": "dhol",
+     "ch": "evening",
+     "name": "Dhol drummers",
+     "price": 450,
+     "unit": "flat",
+     "detail": "Two drummers for your grand entrance, about 20 minutes.",
+     "req": false
+    },
+    {
+     "id": "lights",
+     "ch": "styling",
+     "name": "Uplighting and fairy lights",
+     "price": 400,
+     "unit": "flat",
+     "detail": "Warm-white uplighters in the ceremony room and hall, with a fairy-light canopy over the dance floor.",
+     "req": false
+    },
+    {
+     "id": "florals",
+     "ch": "styling",
+     "name": "Table flowers and a ceremony arch",
+     "price": 950,
+     "unit": "flat",
+     "detail": "Seasonal flowers for every table and an arch for your ceremony, by the venue’s florist.",
+     "req": false
+    },
+    {
+     "id": "candles",
+     "ch": "styling",
+     "name": "Candles and table styling",
+     "price": 300,
+     "unit": "flat",
+     "detail": "Candlesticks, glass holders and linen napkins in your colours.",
+     "req": false
+    },
+    {
+     "id": "rooms",
+     "ch": "stay",
+     "name": "Hold rooms for your guests",
+     "price": 0,
+     "unit": "flat",
+     "detail": "We’ll hold rooms nearby at a wedding rate. Guests book and pay for themselves.",
+     "req": false
+    }
+   ],
+   "rules": {
+    "finish": "Midnight",
+    "limiter": "Yes",
+    "confetti": "Petals, outdoors only",
+    "candles": "In glass holders",
+    "fire": "Not allowed",
+    "suppliers": "Welcome, if they’re insured",
+    "drinks": "Packages from the venue"
+   },
+   "policyText": "The deposit isn’t refundable. Payments after the deposit are refunded if you cancel 9 months before."
+  },
+  {
+   "id": "syon",
+   "name": "Syon Park",
+   "place": "Brentford, London",
+   "style": "Country house",
+   "cap": 250,
+   "hire": 3000,
+   "pp": 110,
+   "am": "Harriet",
+   "policy": "Moderate",
+   "cuisine": [
+    "Seasonal British",
+    "Bespoke menus"
+   ],
+   "feats": [
+    "catering",
+    "veg",
+    "halal",
+    "outdoor",
+    "parking"
+   ],
+   "web": "https://syonpark.co.uk/weddings-private-events/",
+   "cerName": "Ceremony in the Great Conservatory",
+   "about": "The London home of the Dukes of Northumberland, with 200 acres of parkland and the domed Great Conservatory for your ceremony.",
+   "area": "London",
+   "rating": null,
+   "reviews": 0,
+   "sample": true,
+   "tone": [
+    "#EFEAE2",
+    "#CFC3B2"
+   ],
+   "n": 6,
+   "booked": [],
+   "use": "Great Conservatory",
+   "cerDetail": "Licensed for civil ceremonies. Includes chairs, an aisle runner and a table for the registrar.",
+   "hireDetail": "Your spaces at Syon Park for the day and evening, with tables, chairs, linen and the events team.",
+   "photoFiles": [
+    "syon-1.jpg",
+    "syon-2.jpg",
+    "syon-3.jpg"
+   ],
+   "hasEmbeddedPhotos": false,
+   "options": [
+    {
+     "id": "hire",
+     "ch": "venue",
+     "name": "Venue hire",
+     "price": 3000,
+     "unit": "flat",
+     "detail": "Your spaces at Syon Park for the day and evening, with tables, chairs, linen and the events team.",
+     "req": true
+    },
+    {
+     "id": "cer_room",
+     "ch": "ceremony",
+     "name": "Ceremony in the Great Conservatory",
+     "price": 600,
+     "unit": "flat",
+     "detail": "Licensed for civil ceremonies. Includes chairs, an aisle runner and a table for the registrar.",
+     "req": false
+    },
+    {
+     "id": "cer_garden",
+     "ch": "ceremony",
+     "name": "Garden ceremony",
+     "price": 750,
+     "unit": "flat",
+     "detail": "Outdoors in the gardens, with an indoor room kept ready in case it rains.",
+     "req": false
+    },
+    {
+     "id": "cer_none",
+     "ch": "ceremony",
+     "name": "Celebration only",
+     "price": 0,
+     "unit": "flat",
+     "detail": "You’re marrying somewhere else first, and joining your guests here afterwards.",
+     "req": false
+    },
+    {
+     "id": "quartet",
+     "ch": "ceremony",
+     "name": "String quartet",
+     "price": 550,
+     "unit": "flat",
+     "detail": "For your walk down the aisle and the drinks reception.",
+     "req": false
+    },
+    {
+     "id": "can3",
+     "ch": "ceremony",
+     "name": "Three canapés each",
+     "price": 9,
+     "unit": "pp",
+     "detail": "Passed round during the drinks reception. Chosen at your tasting.",
+     "req": false
+    },
+    {
+     "id": "can5",
+     "ch": "ceremony",
+     "name": "Five canapés each",
+     "price": 14,
+     "unit": "pp",
+     "detail": "A more generous reception, ideal if dinner is after 4pm.",
+     "req": false
+    },
+    {
+     "id": "dinner3",
+     "ch": "breakfast",
+     "name": "Three-course dinner",
+     "price": 110,
+     "unit": "pp",
+     "detail": "Seasonal starter, a choice of two mains and dessert. Halal and vegetarian versions of every course.",
+     "req": false
+    },
+    {
+     "id": "feast",
+     "ch": "breakfast",
+     "name": "Sharing feast",
+     "price": 104,
+     "unit": "pp",
+     "detail": "Platters down the middle of each table: slow-roast lamb, chicken, grains and salads, with a dessert table to finish.",
+     "req": false
+    },
+    {
+     "id": "d_none",
+     "ch": "drinks",
+     "name": "Pay at the bar",
+     "price": 0,
+     "unit": "pp",
+     "detail": "No package. Guests buy their own drinks from the venue bar.",
+     "req": false
+    },
+    {
+     "id": "d_classic",
+     "ch": "drinks",
+     "name": "Classic",
+     "price": 28,
+     "unit": "pp",
+     "detail": "A welcome drink, half a bottle of wine each with dinner, and sparkling wine for the toast.",
+     "req": false
+    },
+    {
+     "id": "d_sig",
+     "ch": "drinks",
+     "name": "Signature",
+     "price": 38,
+     "unit": "pp",
+     "detail": "Prosecco on arrival, premium wines with dinner, and champagne for the toast.",
+     "req": false
+    },
+    {
+     "id": "d_pres",
+     "ch": "drinks",
+     "name": "Prestige",
+     "price": 52,
+     "unit": "pp",
+     "detail": "Champagne all afternoon, wines chosen by a sommelier, and cocktails after dinner.",
+     "req": false
+    },
+    {
+     "id": "buffet",
+     "ch": "evening",
+     "name": "Evening buffet",
+     "price": 15,
+     "unit": "eve",
+     "detail": "Stone-baked pizzas or a grazing table from 8pm, for every evening guest.",
+     "req": false
+    },
+    {
+     "id": "dj",
+     "ch": "evening",
+     "name": "DJ, 7pm to midnight",
+     "price": 650,
+     "unit": "flat",
+     "detail": "The resident DJ with sound system and dance-floor lighting. Send your playlist in the app.",
+     "req": false
+    },
+    {
+     "id": "band",
+     "ch": "evening",
+     "name": "Live band",
+     "price": 1800,
+     "unit": "flat",
+     "detail": "A four-piece band for two 45-minute sets, with a DJ playlist in between.",
+     "req": false
+    },
+    {
+     "id": "dhol",
+     "ch": "evening",
+     "name": "Dhol drummers",
+     "price": 450,
+     "unit": "flat",
+     "detail": "Two drummers for your grand entrance, about 20 minutes.",
+     "req": false
+    },
+    {
+     "id": "lights",
+     "ch": "styling",
+     "name": "Uplighting and fairy lights",
+     "price": 400,
+     "unit": "flat",
+     "detail": "Warm-white uplighters in the ceremony room and hall, with a fairy-light canopy over the dance floor.",
+     "req": false
+    },
+    {
+     "id": "florals",
+     "ch": "styling",
+     "name": "Table flowers and a ceremony arch",
+     "price": 950,
+     "unit": "flat",
+     "detail": "Seasonal flowers for every table and an arch for your ceremony, by the venue’s florist.",
+     "req": false
+    },
+    {
+     "id": "candles",
+     "ch": "styling",
+     "name": "Candles and table styling",
+     "price": 300,
+     "unit": "flat",
+     "detail": "Candlesticks, glass holders and linen napkins in your colours.",
+     "req": false
+    },
+    {
+     "id": "rooms",
+     "ch": "stay",
+     "name": "Hold rooms for your guests",
+     "price": 0,
+     "unit": "flat",
+     "detail": "We’ll hold rooms nearby at a wedding rate. Guests book and pay for themselves.",
+     "req": false
+    }
+   ],
+   "rules": {
+    "finish": "Midnight",
+    "limiter": "Yes",
+    "confetti": "Petals, outdoors only",
+    "candles": "In glass holders",
+    "fire": "Not allowed",
+    "suppliers": "Welcome, if they’re insured",
+    "drinks": "Packages from the venue"
+   },
+   "policyText": "Cancel at least 6 months before and get half your deposit back. After that, the deposit isn’t refundable."
+  },
+  {
+   "id": "nhm",
+   "name": "Natural History Museum",
+   "place": "South Kensington, London",
+   "style": "Museum",
+   "cap": 450,
+   "hire": 13000,
+   "pp": 130,
+   "am": "Florence",
+   "policy": "Strict",
+   "cuisine": [
+    "Bespoke menus",
+    "Seasonal British"
+   ],
+   "feats": [
+    "catering",
+    "veg",
+    "halal"
+   ],
+   "web": "https://www.nhm.ac.uk/business-services/venue-hire/weddings-private-events.html",
+   "cerName": "Ceremony in Hintze Hall",
+   "cerDetail": "Twelve spaces are licensed. Hintze Hall takes up to 450 for the ceremony, beneath Hope the blue whale.",
+   "about": "Say yes beneath Hope, the blue whale, in Hintze Hall. Twelve licensed spaces, from the grand hall to the glass Darwin Centre atrium.",
+   "area": "London",
+   "rating": null,
+   "reviews": 0,
+   "sample": true,
+   "tone": [
+    "#EFEAE2",
+    "#CFC3B2"
+   ],
+   "n": 6,
+   "booked": [],
+   "use": "Hintze Hall",
+   "hireDetail": "Your spaces at Natural History Museum for the day and evening, with tables, chairs, linen and the events team.",
+   "photoFiles": [
+    "nhm-1.jpg",
+    "nhm-2.jpg",
+    "nhm-3.jpg"
+   ],
+   "hasEmbeddedPhotos": false,
+   "options": [
+    {
+     "id": "hire",
+     "ch": "venue",
+     "name": "Venue hire",
+     "price": 13000,
+     "unit": "flat",
+     "detail": "Your spaces at Natural History Museum for the day and evening, with tables, chairs, linen and the events team.",
+     "req": true
+    },
+    {
+     "id": "cer_room",
+     "ch": "ceremony",
+     "name": "Ceremony in Hintze Hall",
+     "price": 600,
+     "unit": "flat",
+     "detail": "Twelve spaces are licensed. Hintze Hall takes up to 450 for the ceremony, beneath Hope the blue whale.",
+     "req": false
+    },
+    {
+     "id": "cer_none",
+     "ch": "ceremony",
+     "name": "Celebration only",
+     "price": 0,
+     "unit": "flat",
+     "detail": "You’re marrying somewhere else first, and joining your guests here afterwards.",
+     "req": false
+    },
+    {
+     "id": "quartet",
+     "ch": "ceremony",
+     "name": "String quartet",
+     "price": 550,
+     "unit": "flat",
+     "detail": "For your walk down the aisle and the drinks reception.",
+     "req": false
+    },
+    {
+     "id": "can3",
+     "ch": "ceremony",
+     "name": "Three canapés each",
+     "price": 9,
+     "unit": "pp",
+     "detail": "Passed round during the drinks reception. Chosen at your tasting.",
+     "req": false
+    },
+    {
+     "id": "can5",
+     "ch": "ceremony",
+     "name": "Five canapés each",
+     "price": 14,
+     "unit": "pp",
+     "detail": "A more generous reception, ideal if dinner is after 4pm.",
+     "req": false
+    },
+    {
+     "id": "dinner3",
+     "ch": "breakfast",
+     "name": "Three-course dinner",
+     "price": 130,
+     "unit": "pp",
+     "detail": "Seasonal starter, a choice of two mains and dessert. Halal and vegetarian versions of every course.",
+     "req": false
+    },
+    {
+     "id": "feast",
+     "ch": "breakfast",
+     "name": "Sharing feast",
+     "price": 124,
+     "unit": "pp",
+     "detail": "Platters down the middle of each table: slow-roast lamb, chicken, grains and salads, with a dessert table to finish.",
+     "req": false
+    },
+    {
+     "id": "d_none",
+     "ch": "drinks",
+     "name": "Pay at the bar",
+     "price": 0,
+     "unit": "pp",
+     "detail": "No package. Guests buy their own drinks from the venue bar.",
+     "req": false
+    },
+    {
+     "id": "d_classic",
+     "ch": "drinks",
+     "name": "Classic",
+     "price": 28,
+     "unit": "pp",
+     "detail": "A welcome drink, half a bottle of wine each with dinner, and sparkling wine for the toast.",
+     "req": false
+    },
+    {
+     "id": "d_sig",
+     "ch": "drinks",
+     "name": "Signature",
+     "price": 38,
+     "unit": "pp",
+     "detail": "Prosecco on arrival, premium wines with dinner, and champagne for the toast.",
+     "req": false
+    },
+    {
+     "id": "d_pres",
+     "ch": "drinks",
+     "name": "Prestige",
+     "price": 52,
+     "unit": "pp",
+     "detail": "Champagne all afternoon, wines chosen by a sommelier, and cocktails after dinner.",
+     "req": false
+    },
+    {
+     "id": "buffet",
+     "ch": "evening",
+     "name": "Evening buffet",
+     "price": 15,
+     "unit": "eve",
+     "detail": "Stone-baked pizzas or a grazing table from 8pm, for every evening guest.",
+     "req": false
+    },
+    {
+     "id": "dj",
+     "ch": "evening",
+     "name": "DJ, 7pm to midnight",
+     "price": 650,
+     "unit": "flat",
+     "detail": "The resident DJ with sound system and dance-floor lighting. Send your playlist in the app.",
+     "req": false
+    },
+    {
+     "id": "band",
+     "ch": "evening",
+     "name": "Live band",
+     "price": 1800,
+     "unit": "flat",
+     "detail": "A four-piece band for two 45-minute sets, with a DJ playlist in between.",
+     "req": false
+    },
+    {
+     "id": "dhol",
+     "ch": "evening",
+     "name": "Dhol drummers",
+     "price": 450,
+     "unit": "flat",
+     "detail": "Two drummers for your grand entrance, about 20 minutes.",
+     "req": false
+    },
+    {
+     "id": "lights",
+     "ch": "styling",
+     "name": "Uplighting and fairy lights",
+     "price": 400,
+     "unit": "flat",
+     "detail": "Warm-white uplighters in the ceremony room and hall, with a fairy-light canopy over the dance floor.",
+     "req": false
+    },
+    {
+     "id": "florals",
+     "ch": "styling",
+     "name": "Table flowers and a ceremony arch",
+     "price": 950,
+     "unit": "flat",
+     "detail": "Seasonal flowers for every table and an arch for your ceremony, by the venue’s florist.",
+     "req": false
+    },
+    {
+     "id": "candles",
+     "ch": "styling",
+     "name": "Candles and table styling",
+     "price": 300,
+     "unit": "flat",
+     "detail": "Candlesticks, glass holders and linen napkins in your colours.",
+     "req": false
+    },
+    {
+     "id": "rooms",
+     "ch": "stay",
+     "name": "Hold rooms for your guests",
+     "price": 0,
+     "unit": "flat",
+     "detail": "We’ll hold rooms nearby at a wedding rate. Guests book and pay for themselves.",
+     "req": false
+    }
+   ],
+   "rules": {
+    "finish": "Midnight",
+    "limiter": "Yes",
+    "confetti": "Petals, outdoors only",
+    "candles": "In glass holders",
+    "fire": "Not allowed",
+    "suppliers": "Welcome, if they’re insured",
+    "drinks": "Packages from the venue"
+   },
+   "policyText": "The deposit isn’t refundable. Payments after the deposit are refunded if you cancel 9 months before."
+  },
+  {
+   "id": "dart",
+   "name": "Dartmouth House",
+   "place": "Mayfair, London",
+   "style": "City",
+   "cap": 150,
+   "hire": 2800,
+   "pp": 120,
+   "am": "Clara",
+   "policy": "Moderate",
+   "cuisine": [
+    "Modern British",
+    "Bespoke menus"
+   ],
+   "feats": [
+    "catering",
+    "veg",
+    "halal",
+    "outdoor"
+   ],
+   "web": "https://dartmouthhouse.co.uk/events/weddings/",
+   "cerName": "Ceremony in the house",
+   "cerDetail": "Licensed for civil ceremonies for up to 100 guests. Includes chairs and a table for the registrar.",
+   "about": "A Georgian townhouse in Mayfair with a marble courtyard that feels like a French château. Exclusive use at weekends.",
+   "area": "London",
+   "rating": null,
+   "reviews": 0,
+   "sample": true,
+   "tone": [
+    "#EFEAE2",
+    "#CFC3B2"
+   ],
+   "n": 6,
+   "booked": [],
+   "use": "Exclusive use at weekends",
+   "hireDetail": "Your spaces at Dartmouth House for the day and evening, with tables, chairs, linen and the events team.",
+   "photoFiles": [
+    "dart-1.jpg",
+    "dart-2.jpg",
+    "dart-3.jpg"
+   ],
+   "hasEmbeddedPhotos": false,
+   "options": [
+    {
+     "id": "hire",
+     "ch": "venue",
+     "name": "Venue hire",
+     "price": 2800,
+     "unit": "flat",
+     "detail": "Your spaces at Dartmouth House for the day and evening, with tables, chairs, linen and the events team.",
+     "req": true
+    },
+    {
+     "id": "cer_room",
+     "ch": "ceremony",
+     "name": "Ceremony in the house",
+     "price": 600,
+     "unit": "flat",
+     "detail": "Licensed for civil ceremonies for up to 100 guests. Includes chairs and a table for the registrar.",
+     "req": false
+    },
+    {
+     "id": "cer_garden",
+     "ch": "ceremony",
+     "name": "Garden ceremony",
+     "price": 750,
+     "unit": "flat",
+     "detail": "Outdoors in the gardens, with an indoor room kept ready in case it rains.",
+     "req": false
+    },
+    {
+     "id": "cer_none",
+     "ch": "ceremony",
+     "name": "Celebration only",
+     "price": 0,
+     "unit": "flat",
+     "detail": "You’re marrying somewhere else first, and joining your guests here afterwards.",
+     "req": false
+    },
+    {
+     "id": "quartet",
+     "ch": "ceremony",
+     "name": "String quartet",
+     "price": 550,
+     "unit": "flat",
+     "detail": "For your walk down the aisle and the drinks reception.",
+     "req": false
+    },
+    {
+     "id": "can3",
+     "ch": "ceremony",
+     "name": "Three canapés each",
+     "price": 9,
+     "unit": "pp",
+     "detail": "Passed round during the drinks reception. Chosen at your tasting.",
+     "req": false
+    },
+    {
+     "id": "can5",
+     "ch": "ceremony",
+     "name": "Five canapés each",
+     "price": 14,
+     "unit": "pp",
+     "detail": "A more generous reception, ideal if dinner is after 4pm.",
+     "req": false
+    },
+    {
+     "id": "dinner3",
+     "ch": "breakfast",
+     "name": "Three-course dinner",
+     "price": 120,
+     "unit": "pp",
+     "detail": "Seasonal starter, a choice of two mains and dessert. Halal and vegetarian versions of every course.",
+     "req": false
+    },
+    {
+     "id": "feast",
+     "ch": "breakfast",
+     "name": "Sharing feast",
+     "price": 114,
+     "unit": "pp",
+     "detail": "Platters down the middle of each table: slow-roast lamb, chicken, grains and salads, with a dessert table to finish.",
+     "req": false
+    },
+    {
+     "id": "d_none",
+     "ch": "drinks",
+     "name": "Pay at the bar",
+     "price": 0,
+     "unit": "pp",
+     "detail": "No package. Guests buy their own drinks from the venue bar.",
+     "req": false
+    },
+    {
+     "id": "d_classic",
+     "ch": "drinks",
+     "name": "Classic",
+     "price": 28,
+     "unit": "pp",
+     "detail": "A welcome drink, half a bottle of wine each with dinner, and sparkling wine for the toast.",
+     "req": false
+    },
+    {
+     "id": "d_sig",
+     "ch": "drinks",
+     "name": "Signature",
+     "price": 38,
+     "unit": "pp",
+     "detail": "Prosecco on arrival, premium wines with dinner, and champagne for the toast.",
+     "req": false
+    },
+    {
+     "id": "d_pres",
+     "ch": "drinks",
+     "name": "Prestige",
+     "price": 52,
+     "unit": "pp",
+     "detail": "Champagne all afternoon, wines chosen by a sommelier, and cocktails after dinner.",
+     "req": false
+    },
+    {
+     "id": "buffet",
+     "ch": "evening",
+     "name": "Evening buffet",
+     "price": 15,
+     "unit": "eve",
+     "detail": "Stone-baked pizzas or a grazing table from 8pm, for every evening guest.",
+     "req": false
+    },
+    {
+     "id": "dj",
+     "ch": "evening",
+     "name": "DJ, 7pm to midnight",
+     "price": 650,
+     "unit": "flat",
+     "detail": "The resident DJ with sound system and dance-floor lighting. Send your playlist in the app.",
+     "req": false
+    },
+    {
+     "id": "band",
+     "ch": "evening",
+     "name": "Live band",
+     "price": 1800,
+     "unit": "flat",
+     "detail": "A four-piece band for two 45-minute sets, with a DJ playlist in between.",
+     "req": false
+    },
+    {
+     "id": "dhol",
+     "ch": "evening",
+     "name": "Dhol drummers",
+     "price": 450,
+     "unit": "flat",
+     "detail": "Two drummers for your grand entrance, about 20 minutes.",
+     "req": false
+    },
+    {
+     "id": "lights",
+     "ch": "styling",
+     "name": "Uplighting and fairy lights",
+     "price": 400,
+     "unit": "flat",
+     "detail": "Warm-white uplighters in the ceremony room and hall, with a fairy-light canopy over the dance floor.",
+     "req": false
+    },
+    {
+     "id": "florals",
+     "ch": "styling",
+     "name": "Table flowers and a ceremony arch",
+     "price": 950,
+     "unit": "flat",
+     "detail": "Seasonal flowers for every table and an arch for your ceremony, by the venue’s florist.",
+     "req": false
+    },
+    {
+     "id": "candles",
+     "ch": "styling",
+     "name": "Candles and table styling",
+     "price": 300,
+     "unit": "flat",
+     "detail": "Candlesticks, glass holders and linen napkins in your colours.",
+     "req": false
+    },
+    {
+     "id": "rooms",
+     "ch": "stay",
+     "name": "Hold rooms for your guests",
+     "price": 0,
+     "unit": "flat",
+     "detail": "We’ll hold rooms nearby at a wedding rate. Guests book and pay for themselves.",
+     "req": false
+    }
+   ],
+   "rules": {
+    "finish": "Midnight",
+    "limiter": "Yes",
+    "confetti": "Petals, outdoors only",
+    "candles": "In glass holders",
+    "fire": "Not allowed",
+    "suppliers": "Welcome, if they’re insured",
+    "drinks": "Packages from the venue"
+   },
+   "policyText": "Cancel at least 6 months before and get half your deposit back. After that, the deposit isn’t refundable."
+  },
+  {
+   "id": "kew",
+   "name": "Kew Gardens",
+   "place": "Richmond, London",
+   "style": "Garden",
+   "cap": 230,
+   "hire": 3000,
+   "pp": 125,
+   "am": "Rosie",
+   "policy": "Moderate",
+   "cuisine": [
+    "Seasonal British",
+    "Plant-led"
+   ],
+   "feats": [
+    "catering",
+    "veg",
+    "halal",
+    "outdoor"
+   ],
+   "web": "https://www.kew.org/venue-hire/luxury-weddings",
+   "cerName": "Ceremony in the Nash Conservatory",
+   "cerDetail": "Up to 200 guests, with floor-to-ceiling windows on three sides. Includes chairs and a table for the registrar.",
+   "about": "Marry in the Nash Conservatory, then dine among the palms of the Temperate House, the world’s largest surviving Victorian glasshouse.",
+   "area": "London",
+   "rating": null,
+   "reviews": 0,
+   "sample": true,
+   "tone": [
+    "#EFEAE2",
+    "#CFC3B2"
+   ],
+   "n": 6,
+   "booked": [],
+   "use": "Nash Conservatory and Temperate House",
+   "hireDetail": "Your spaces at Kew Gardens for the day and evening, with tables, chairs, linen and the events team.",
+   "photoFiles": [
+    "kew-1.jpg",
+    "kew-2.jpg",
+    "kew-3.jpg"
+   ],
+   "hasEmbeddedPhotos": false,
+   "options": [
+    {
+     "id": "hire",
+     "ch": "venue",
+     "name": "Venue hire",
+     "price": 3000,
+     "unit": "flat",
+     "detail": "Your spaces at Kew Gardens for the day and evening, with tables, chairs, linen and the events team.",
+     "req": true
+    },
+    {
+     "id": "cer_room",
+     "ch": "ceremony",
+     "name": "Ceremony in the Nash Conservatory",
+     "price": 600,
+     "unit": "flat",
+     "detail": "Up to 200 guests, with floor-to-ceiling windows on three sides. Includes chairs and a table for the registrar.",
+     "req": false
+    },
+    {
+     "id": "cer_garden",
+     "ch": "ceremony",
+     "name": "Garden ceremony",
+     "price": 750,
+     "unit": "flat",
+     "detail": "Outdoors in the gardens, with an indoor room kept ready in case it rains.",
+     "req": false
+    },
+    {
+     "id": "cer_none",
+     "ch": "ceremony",
+     "name": "Celebration only",
+     "price": 0,
+     "unit": "flat",
+     "detail": "You’re marrying somewhere else first, and joining your guests here afterwards.",
+     "req": false
+    },
+    {
+     "id": "quartet",
+     "ch": "ceremony",
+     "name": "String quartet",
+     "price": 550,
+     "unit": "flat",
+     "detail": "For your walk down the aisle and the drinks reception.",
+     "req": false
+    },
+    {
+     "id": "can3",
+     "ch": "ceremony",
+     "name": "Three canapés each",
+     "price": 9,
+     "unit": "pp",
+     "detail": "Passed round during the drinks reception. Chosen at your tasting.",
+     "req": false
+    },
+    {
+     "id": "can5",
+     "ch": "ceremony",
+     "name": "Five canapés each",
+     "price": 14,
+     "unit": "pp",
+     "detail": "A more generous reception, ideal if dinner is after 4pm.",
+     "req": false
+    },
+    {
+     "id": "dinner3",
+     "ch": "breakfast",
+     "name": "Three-course dinner",
+     "price": 125,
+     "unit": "pp",
+     "detail": "Seasonal starter, a choice of two mains and dessert. Halal and vegetarian versions of every course.",
+     "req": false
+    },
+    {
+     "id": "feast",
+     "ch": "breakfast",
+     "name": "Sharing feast",
+     "price": 119,
+     "unit": "pp",
+     "detail": "Platters down the middle of each table: slow-roast lamb, chicken, grains and salads, with a dessert table to finish.",
+     "req": false
+    },
+    {
+     "id": "d_none",
+     "ch": "drinks",
+     "name": "Pay at the bar",
+     "price": 0,
+     "unit": "pp",
+     "detail": "No package. Guests buy their own drinks from the venue bar.",
+     "req": false
+    },
+    {
+     "id": "d_classic",
+     "ch": "drinks",
+     "name": "Classic",
+     "price": 28,
+     "unit": "pp",
+     "detail": "A welcome drink, half a bottle of wine each with dinner, and sparkling wine for the toast.",
+     "req": false
+    },
+    {
+     "id": "d_sig",
+     "ch": "drinks",
+     "name": "Signature",
+     "price": 38,
+     "unit": "pp",
+     "detail": "Prosecco on arrival, premium wines with dinner, and champagne for the toast.",
+     "req": false
+    },
+    {
+     "id": "d_pres",
+     "ch": "drinks",
+     "name": "Prestige",
+     "price": 52,
+     "unit": "pp",
+     "detail": "Champagne all afternoon, wines chosen by a sommelier, and cocktails after dinner.",
+     "req": false
+    },
+    {
+     "id": "buffet",
+     "ch": "evening",
+     "name": "Evening buffet",
+     "price": 15,
+     "unit": "eve",
+     "detail": "Stone-baked pizzas or a grazing table from 8pm, for every evening guest.",
+     "req": false
+    },
+    {
+     "id": "dj",
+     "ch": "evening",
+     "name": "DJ, 7pm to midnight",
+     "price": 650,
+     "unit": "flat",
+     "detail": "The resident DJ with sound system and dance-floor lighting. Send your playlist in the app.",
+     "req": false
+    },
+    {
+     "id": "band",
+     "ch": "evening",
+     "name": "Live band",
+     "price": 1800,
+     "unit": "flat",
+     "detail": "A four-piece band for two 45-minute sets, with a DJ playlist in between.",
+     "req": false
+    },
+    {
+     "id": "dhol",
+     "ch": "evening",
+     "name": "Dhol drummers",
+     "price": 450,
+     "unit": "flat",
+     "detail": "Two drummers for your grand entrance, about 20 minutes.",
+     "req": false
+    },
+    {
+     "id": "lights",
+     "ch": "styling",
+     "name": "Uplighting and fairy lights",
+     "price": 400,
+     "unit": "flat",
+     "detail": "Warm-white uplighters in the ceremony room and hall, with a fairy-light canopy over the dance floor.",
+     "req": false
+    },
+    {
+     "id": "florals",
+     "ch": "styling",
+     "name": "Table flowers and a ceremony arch",
+     "price": 950,
+     "unit": "flat",
+     "detail": "Seasonal flowers for every table and an arch for your ceremony, by the venue’s florist.",
+     "req": false
+    },
+    {
+     "id": "candles",
+     "ch": "styling",
+     "name": "Candles and table styling",
+     "price": 300,
+     "unit": "flat",
+     "detail": "Candlesticks, glass holders and linen napkins in your colours.",
+     "req": false
+    },
+    {
+     "id": "rooms",
+     "ch": "stay",
+     "name": "Hold rooms for your guests",
+     "price": 0,
+     "unit": "flat",
+     "detail": "We’ll hold rooms nearby at a wedding rate. Guests book and pay for themselves.",
+     "req": false
+    }
+   ],
+   "rules": {
+    "finish": "Midnight",
+    "limiter": "Yes",
+    "confetti": "Petals, outdoors only",
+    "candles": "In glass holders",
+    "fire": "Not allowed",
+    "suppliers": "Welcome, if they’re insured",
+    "drinks": "Packages from the venue"
+   },
+   "policyText": "Cancel at least 6 months before and get half your deposit back. After that, the deposit isn’t refundable."
+  },
+  {
+   "id": "sth",
+   "name": "Shoreditch Town Hall",
+   "place": "Shoreditch, London",
+   "style": "City",
+   "cap": 400,
+   "hire": 8000,
+   "pp": 95,
+   "am": "Maya",
+   "policy": "Moderate",
+   "cuisine": [
+    "Street food",
+    "Modern British",
+    "Bring your own caterer"
+   ],
+   "feats": [
+    "catering",
+    "outside",
+    "veg",
+    "halal",
+    "late"
+   ],
+   "web": "https://shoreditchtownhall.com/event-hire/spaces-for-hire.html",
+   "cerName": "Ceremony in the Large Committee Room",
+   "cerDetail": "Several rooms are licensed, from the intimate Mayor’s Parlour to The Ditch. Includes chairs and a table for the registrar.",
+   "about": "A grand Victorian civic hall in the heart of Shoreditch, with a sprung-floor Assembly Hall that dances until late.",
+   "area": "London",
+   "rating": null,
+   "reviews": 0,
+   "sample": true,
+   "tone": [
+    "#EFEAE2",
+    "#CFC3B2"
+   ],
+   "n": 6,
+   "booked": [],
+   "use": "Assembly Hall",
+   "hireDetail": "Your spaces at Shoreditch Town Hall for the day and evening, with tables, chairs, linen and the events team.",
+   "photoFiles": [
+    "sth-1.jpg",
+    "sth-2.jpg"
+   ],
+   "hasEmbeddedPhotos": false,
+   "options": [
+    {
+     "id": "hire",
+     "ch": "venue",
+     "name": "Venue hire",
+     "price": 8000,
+     "unit": "flat",
+     "detail": "Your spaces at Shoreditch Town Hall for the day and evening, with tables, chairs, linen and the events team.",
+     "req": true
+    },
+    {
+     "id": "cer_room",
+     "ch": "ceremony",
+     "name": "Ceremony in the Large Committee Room",
+     "price": 600,
+     "unit": "flat",
+     "detail": "Several rooms are licensed, from the intimate Mayor’s Parlour to The Ditch. Includes chairs and a table for the registrar.",
+     "req": false
+    },
+    {
+     "id": "cer_none",
+     "ch": "ceremony",
+     "name": "Celebration only",
+     "price": 0,
+     "unit": "flat",
+     "detail": "You’re marrying somewhere else first, and joining your guests here afterwards.",
+     "req": false
+    },
+    {
+     "id": "quartet",
+     "ch": "ceremony",
+     "name": "String quartet",
+     "price": 550,
+     "unit": "flat",
+     "detail": "For your walk down the aisle and the drinks reception.",
+     "req": false
+    },
+    {
+     "id": "can3",
+     "ch": "ceremony",
+     "name": "Three canapés each",
+     "price": 9,
+     "unit": "pp",
+     "detail": "Passed round during the drinks reception. Chosen at your tasting.",
+     "req": false
+    },
+    {
+     "id": "can5",
+     "ch": "ceremony",
+     "name": "Five canapés each",
+     "price": 14,
+     "unit": "pp",
+     "detail": "A more generous reception, ideal if dinner is after 4pm.",
+     "req": false
+    },
+    {
+     "id": "dinner3",
+     "ch": "breakfast",
+     "name": "Three-course dinner",
+     "price": 95,
+     "unit": "pp",
+     "detail": "Seasonal starter, a choice of two mains and dessert. Halal and vegetarian versions of every course.",
+     "req": false
+    },
+    {
+     "id": "feast",
+     "ch": "breakfast",
+     "name": "Sharing feast",
+     "price": 89,
+     "unit": "pp",
+     "detail": "Platters down the middle of each table: slow-roast lamb, chicken, grains and salads, with a dessert table to finish.",
+     "req": false
+    },
+    {
+     "id": "d_none",
+     "ch": "drinks",
+     "name": "Pay at the bar",
+     "price": 0,
+     "unit": "pp",
+     "detail": "No package. Guests buy their own drinks from the venue bar.",
+     "req": false
+    },
+    {
+     "id": "d_classic",
+     "ch": "drinks",
+     "name": "Classic",
+     "price": 28,
+     "unit": "pp",
+     "detail": "A welcome drink, half a bottle of wine each with dinner, and sparkling wine for the toast.",
+     "req": false
+    },
+    {
+     "id": "d_sig",
+     "ch": "drinks",
+     "name": "Signature",
+     "price": 38,
+     "unit": "pp",
+     "detail": "Prosecco on arrival, premium wines with dinner, and champagne for the toast.",
+     "req": false
+    },
+    {
+     "id": "d_pres",
+     "ch": "drinks",
+     "name": "Prestige",
+     "price": 52,
+     "unit": "pp",
+     "detail": "Champagne all afternoon, wines chosen by a sommelier, and cocktails after dinner.",
+     "req": false
+    },
+    {
+     "id": "buffet",
+     "ch": "evening",
+     "name": "Evening buffet",
+     "price": 15,
+     "unit": "eve",
+     "detail": "Stone-baked pizzas or a grazing table from 8pm, for every evening guest.",
+     "req": false
+    },
+    {
+     "id": "dj",
+     "ch": "evening",
+     "name": "DJ, 7pm to midnight",
+     "price": 650,
+     "unit": "flat",
+     "detail": "The resident DJ with sound system and dance-floor lighting. Send your playlist in the app.",
+     "req": false
+    },
+    {
+     "id": "band",
+     "ch": "evening",
+     "name": "Live band",
+     "price": 1800,
+     "unit": "flat",
+     "detail": "A four-piece band for two 45-minute sets, with a DJ playlist in between.",
+     "req": false
+    },
+    {
+     "id": "dhol",
+     "ch": "evening",
+     "name": "Dhol drummers",
+     "price": 450,
+     "unit": "flat",
+     "detail": "Two drummers for your grand entrance, about 20 minutes.",
+     "req": false
+    },
+    {
+     "id": "latebar",
+     "ch": "evening",
+     "name": "Late bar to 1am",
+     "price": 350,
+     "unit": "flat",
+     "detail": "Keeps the bar open for an extra hour under the venue’s late licence.",
+     "req": false
+    },
+    {
+     "id": "lights",
+     "ch": "styling",
+     "name": "Uplighting and fairy lights",
+     "price": 400,
+     "unit": "flat",
+     "detail": "Warm-white uplighters in the ceremony room and hall, with a fairy-light canopy over the dance floor.",
+     "req": false
+    },
+    {
+     "id": "florals",
+     "ch": "styling",
+     "name": "Table flowers and a ceremony arch",
+     "price": 950,
+     "unit": "flat",
+     "detail": "Seasonal flowers for every table and an arch for your ceremony, by the venue’s florist.",
+     "req": false
+    },
+    {
+     "id": "candles",
+     "ch": "styling",
+     "name": "Candles and table styling",
+     "price": 300,
+     "unit": "flat",
+     "detail": "Candlesticks, glass holders and linen napkins in your colours.",
+     "req": false
+    },
+    {
+     "id": "rooms",
+     "ch": "stay",
+     "name": "Hold rooms for your guests",
+     "price": 0,
+     "unit": "flat",
+     "detail": "We’ll hold rooms nearby at a wedding rate. Guests book and pay for themselves.",
+     "req": false
+    }
+   ],
+   "rules": {
+    "finish": "Late, by arrangement",
+    "limiter": "No",
+    "confetti": "Not inside the building",
+    "candles": "LED only",
+    "fire": "Not allowed",
+    "suppliers": "Any caterer you like",
+    "drinks": "Packages from the venue"
+   },
+   "policyText": "Cancel at least 6 months before and get half your deposit back. After that, the deposit isn’t refundable."
+  },
+  {
+   "id": "horn",
+   "name": "Horniman Museum and Gardens",
+   "place": "Forest Hill, London",
+   "style": "Garden",
+   "cap": 120,
+   "hire": 1200,
+   "pp": 85,
+   "am": "Jess",
+   "policy": "Flexible",
+   "cuisine": [
+    "Seasonal British",
+    "Sharing feasts"
+   ],
+   "feats": [
+    "catering",
+    "veg",
+    "halal",
+    "outdoor"
+   ],
+   "web": "https://www.horniman.ac.uk/hire/weddings-and-civil-ceremonies/",
+   "cerName": "Ceremony in the Conservatory",
+   "cerDetail": "All three spaces are licensed, including the Victorian Conservatory and the Bandstand with views across London.",
+   "about": "A Victorian cast-iron conservatory and a hilltop bandstand with views over London. Three licensed spaces in 16 acres of gardens.",
+   "area": "London",
+   "rating": null,
+   "reviews": 0,
+   "sample": true,
+   "tone": [
+    "#EFEAE2",
+    "#CFC3B2"
+   ],
+   "n": 6,
+   "booked": [],
+   "use": "Conservatory and Bandstand",
+   "hireDetail": "Your spaces at Horniman Museum and Gardens for the day and evening, with tables, chairs, linen and the events team.",
+   "photoFiles": [
+    "horn-1.jpg",
+    "horn-2.jpg",
+    "horn-3.jpg"
+   ],
+   "hasEmbeddedPhotos": false,
+   "options": [
+    {
+     "id": "hire",
+     "ch": "venue",
+     "name": "Venue hire",
+     "price": 1200,
+     "unit": "flat",
+     "detail": "Your spaces at Horniman Museum and Gardens for the day and evening, with tables, chairs, linen and the events team.",
+     "req": true
+    },
+    {
+     "id": "cer_room",
+     "ch": "ceremony",
+     "name": "Ceremony in the Conservatory",
+     "price": 600,
+     "unit": "flat",
+     "detail": "All three spaces are licensed, including the Victorian Conservatory and the Bandstand with views across London.",
+     "req": false
+    },
+    {
+     "id": "cer_garden",
+     "ch": "ceremony",
+     "name": "Garden ceremony",
+     "price": 750,
+     "unit": "flat",
+     "detail": "Outdoors in the gardens, with an indoor room kept ready in case it rains.",
+     "req": false
+    },
+    {
+     "id": "cer_none",
+     "ch": "ceremony",
+     "name": "Celebration only",
+     "price": 0,
+     "unit": "flat",
+     "detail": "You’re marrying somewhere else first, and joining your guests here afterwards.",
+     "req": false
+    },
+    {
+     "id": "quartet",
+     "ch": "ceremony",
+     "name": "String quartet",
+     "price": 550,
+     "unit": "flat",
+     "detail": "For your walk down the aisle and the drinks reception.",
+     "req": false
+    },
+    {
+     "id": "can3",
+     "ch": "ceremony",
+     "name": "Three canapés each",
+     "price": 9,
+     "unit": "pp",
+     "detail": "Passed round during the drinks reception. Chosen at your tasting.",
+     "req": false
+    },
+    {
+     "id": "can5",
+     "ch": "ceremony",
+     "name": "Five canapés each",
+     "price": 14,
+     "unit": "pp",
+     "detail": "A more generous reception, ideal if dinner is after 4pm.",
+     "req": false
+    },
+    {
+     "id": "dinner3",
+     "ch": "breakfast",
+     "name": "Three-course dinner",
+     "price": 85,
+     "unit": "pp",
+     "detail": "Seasonal starter, a choice of two mains and dessert. Halal and vegetarian versions of every course.",
+     "req": false
+    },
+    {
+     "id": "feast",
+     "ch": "breakfast",
+     "name": "Sharing feast",
+     "price": 79,
+     "unit": "pp",
+     "detail": "Platters down the middle of each table: slow-roast lamb, chicken, grains and salads, with a dessert table to finish.",
+     "req": false
+    },
+    {
+     "id": "d_none",
+     "ch": "drinks",
+     "name": "Pay at the bar",
+     "price": 0,
+     "unit": "pp",
+     "detail": "No package. Guests buy their own drinks from the venue bar.",
+     "req": false
+    },
+    {
+     "id": "d_classic",
+     "ch": "drinks",
+     "name": "Classic",
+     "price": 28,
+     "unit": "pp",
+     "detail": "A welcome drink, half a bottle of wine each with dinner, and sparkling wine for the toast.",
+     "req": false
+    },
+    {
+     "id": "d_sig",
+     "ch": "drinks",
+     "name": "Signature",
+     "price": 38,
+     "unit": "pp",
+     "detail": "Prosecco on arrival, premium wines with dinner, and champagne for the toast.",
+     "req": false
+    },
+    {
+     "id": "d_pres",
+     "ch": "drinks",
+     "name": "Prestige",
+     "price": 52,
+     "unit": "pp",
+     "detail": "Champagne all afternoon, wines chosen by a sommelier, and cocktails after dinner.",
+     "req": false
+    },
+    {
+     "id": "buffet",
+     "ch": "evening",
+     "name": "Evening buffet",
+     "price": 15,
+     "unit": "eve",
+     "detail": "Stone-baked pizzas or a grazing table from 8pm, for every evening guest.",
+     "req": false
+    },
+    {
+     "id": "dj",
+     "ch": "evening",
+     "name": "DJ, 7pm to midnight",
+     "price": 650,
+     "unit": "flat",
+     "detail": "The resident DJ with sound system and dance-floor lighting. Send your playlist in the app.",
+     "req": false
+    },
+    {
+     "id": "band",
+     "ch": "evening",
+     "name": "Live band",
+     "price": 1800,
+     "unit": "flat",
+     "detail": "A four-piece band for two 45-minute sets, with a DJ playlist in between.",
+     "req": false
+    },
+    {
+     "id": "dhol",
+     "ch": "evening",
+     "name": "Dhol drummers",
+     "price": 450,
+     "unit": "flat",
+     "detail": "Two drummers for your grand entrance, about 20 minutes.",
+     "req": false
+    },
+    {
+     "id": "lights",
+     "ch": "styling",
+     "name": "Uplighting and fairy lights",
+     "price": 400,
+     "unit": "flat",
+     "detail": "Warm-white uplighters in the ceremony room and hall, with a fairy-light canopy over the dance floor.",
+     "req": false
+    },
+    {
+     "id": "florals",
+     "ch": "styling",
+     "name": "Table flowers and a ceremony arch",
+     "price": 950,
+     "unit": "flat",
+     "detail": "Seasonal flowers for every table and an arch for your ceremony, by the venue’s florist.",
+     "req": false
+    },
+    {
+     "id": "candles",
+     "ch": "styling",
+     "name": "Candles and table styling",
+     "price": 300,
+     "unit": "flat",
+     "detail": "Candlesticks, glass holders and linen napkins in your colours.",
+     "req": false
+    },
+    {
+     "id": "rooms",
+     "ch": "stay",
+     "name": "Hold rooms for your guests",
+     "price": 0,
+     "unit": "flat",
+     "detail": "We’ll hold rooms nearby at a wedding rate. Guests book and pay for themselves.",
+     "req": false
+    }
+   ],
+   "rules": {
+    "finish": "Midnight",
+    "limiter": "Yes",
+    "confetti": "Petals, outdoors only",
+    "candles": "In glass holders",
+    "fire": "Not allowed",
+    "suppliers": "Welcome, if they’re insured",
+    "drinks": "Packages from the venue"
+   },
+   "policyText": "Cancel at least 3 months before and get your deposit back, apart from 8% of the package. After that, the deposit isn’t refundable."
+  },
+  {
+   "id": "fulham",
+   "name": "Fulham Palace",
+   "place": "Fulham, London",
+   "style": "Palace",
+   "cap": 180,
+   "hire": 5000,
+   "pp": 100,
+   "am": "Sophie",
+   "practical": [
+    [
+     "Getting there",
+     "Putney Bridge on the District line, a 15-minute walk through Bishop’s Park. Buses 74, 220 and 430 stop five minutes away."
+    ],
+    [
+     "Parking",
+     "Metered parking on Bishop’s Avenue. Extra restrictions apply on Fulham FC home match days, so check the fixtures for your date."
+    ],
+    [
+     "Accessibility",
+     "Blue Badge spaces in the gated car park, booked ahead. Putney Bridge station has no lift, so guests who need step-free access are best dropped at the gate."
+    ],
+    [
+     "If it rains",
+     "Four rooms in the palace are licensed, so a garden ceremony can move indoors on the day."
+    ]
+   ],
+   "policy": "Moderate",
+   "cuisine": [
+    "Seasonal British",
+    "Bespoke menus"
+   ],
+   "feats": [
+    "catering",
+    "veg",
+    "halal",
+    "outdoor",
+    "late"
+   ],
+   "web": "https://www.fulhampalace.org/venue-hire/weddings-civil-ceremonies/",
+   "cerName": "Ceremony in the Palace",
+   "cerDetail": "Four rooms are licensed for up to 120, and the private chapel seats 90 for a blessing.",
+   "about": "The former home of the Bishops of London, on the Thames. Tudor courtyard, a walled garden and 13 acres of botanical gardens.",
+   "area": "London",
+   "rating": null,
+   "reviews": 0,
+   "sample": true,
+   "tone": [
+    "#EFEAE2",
+    "#CFC3B2"
+   ],
+   "n": 6,
+   "booked": [],
+   "use": "Great Hall and gardens",
+   "hireDetail": "Your spaces at Fulham Palace for the day and evening, with tables, chairs, linen and the events team.",
+   "photoFiles": [
+    "fulham-1.jpg",
+    "fulham-2.jpg",
+    "fulham-3.jpg"
+   ],
+   "hasEmbeddedPhotos": false,
+   "options": [
+    {
+     "id": "hire",
+     "ch": "venue",
+     "name": "Venue hire",
+     "price": 5000,
+     "unit": "flat",
+     "detail": "Your spaces at Fulham Palace for the day and evening, with tables, chairs, linen and the events team.",
+     "req": true
+    },
+    {
+     "id": "cer_room",
+     "ch": "ceremony",
+     "name": "Ceremony in the Palace",
+     "price": 600,
+     "unit": "flat",
+     "detail": "Four rooms are licensed for up to 120, and the private chapel seats 90 for a blessing.",
+     "req": false
+    },
+    {
+     "id": "cer_garden",
+     "ch": "ceremony",
+     "name": "Garden ceremony",
+     "price": 750,
+     "unit": "flat",
+     "detail": "Outdoors in the gardens, with an indoor room kept ready in case it rains.",
+     "req": false
+    },
+    {
+     "id": "cer_none",
+     "ch": "ceremony",
+     "name": "Celebration only",
+     "price": 0,
+     "unit": "flat",
+     "detail": "You’re marrying somewhere else first, and joining your guests here afterwards.",
+     "req": false
+    },
+    {
+     "id": "quartet",
+     "ch": "ceremony",
+     "name": "String quartet",
+     "price": 550,
+     "unit": "flat",
+     "detail": "For your walk down the aisle and the drinks reception.",
+     "req": false
+    },
+    {
+     "id": "can3",
+     "ch": "ceremony",
+     "name": "Three canapés each",
+     "price": 9,
+     "unit": "pp",
+     "detail": "Passed round during the drinks reception. Chosen at your tasting.",
+     "req": false
+    },
+    {
+     "id": "can5",
+     "ch": "ceremony",
+     "name": "Five canapés each",
+     "price": 14,
+     "unit": "pp",
+     "detail": "A more generous reception, ideal if dinner is after 4pm.",
+     "req": false
+    },
+    {
+     "id": "dinner3",
+     "ch": "breakfast",
+     "name": "Three-course dinner",
+     "price": 100,
+     "unit": "pp",
+     "detail": "Seasonal starter, a choice of two mains and dessert. Halal and vegetarian versions of every course.",
+     "req": false
+    },
+    {
+     "id": "feast",
+     "ch": "breakfast",
+     "name": "Sharing feast",
+     "price": 94,
+     "unit": "pp",
+     "detail": "Platters down the middle of each table: slow-roast lamb, chicken, grains and salads, with a dessert table to finish.",
+     "req": false
+    },
+    {
+     "id": "d_none",
+     "ch": "drinks",
+     "name": "Pay at the bar",
+     "price": 0,
+     "unit": "pp",
+     "detail": "No package. Guests buy their own drinks from the venue bar.",
+     "req": false
+    },
+    {
+     "id": "d_classic",
+     "ch": "drinks",
+     "name": "Classic",
+     "price": 28,
+     "unit": "pp",
+     "detail": "A welcome drink, half a bottle of wine each with dinner, and sparkling wine for the toast.",
+     "req": false
+    },
+    {
+     "id": "d_sig",
+     "ch": "drinks",
+     "name": "Signature",
+     "price": 38,
+     "unit": "pp",
+     "detail": "Prosecco on arrival, premium wines with dinner, and champagne for the toast.",
+     "req": false
+    },
+    {
+     "id": "d_pres",
+     "ch": "drinks",
+     "name": "Prestige",
+     "price": 52,
+     "unit": "pp",
+     "detail": "Champagne all afternoon, wines chosen by a sommelier, and cocktails after dinner.",
+     "req": false
+    },
+    {
+     "id": "buffet",
+     "ch": "evening",
+     "name": "Evening buffet",
+     "price": 15,
+     "unit": "eve",
+     "detail": "Stone-baked pizzas or a grazing table from 8pm, for every evening guest.",
+     "req": false
+    },
+    {
+     "id": "dj",
+     "ch": "evening",
+     "name": "DJ, 7pm to midnight",
+     "price": 650,
+     "unit": "flat",
+     "detail": "The resident DJ with sound system and dance-floor lighting. Send your playlist in the app.",
+     "req": false
+    },
+    {
+     "id": "band",
+     "ch": "evening",
+     "name": "Live band",
+     "price": 1800,
+     "unit": "flat",
+     "detail": "A four-piece band for two 45-minute sets, with a DJ playlist in between.",
+     "req": false
+    },
+    {
+     "id": "dhol",
+     "ch": "evening",
+     "name": "Dhol drummers",
+     "price": 450,
+     "unit": "flat",
+     "detail": "Two drummers for your grand entrance, about 20 minutes.",
+     "req": false
+    },
+    {
+     "id": "latebar",
+     "ch": "evening",
+     "name": "Late bar to 1am",
+     "price": 350,
+     "unit": "flat",
+     "detail": "Keeps the bar open for an extra hour under the venue’s late licence.",
+     "req": false
+    },
+    {
+     "id": "lights",
+     "ch": "styling",
+     "name": "Uplighting and fairy lights",
+     "price": 400,
+     "unit": "flat",
+     "detail": "Warm-white uplighters in the ceremony room and hall, with a fairy-light canopy over the dance floor.",
+     "req": false
+    },
+    {
+     "id": "florals",
+     "ch": "styling",
+     "name": "Table flowers and a ceremony arch",
+     "price": 950,
+     "unit": "flat",
+     "detail": "Seasonal flowers for every table and an arch for your ceremony, by the venue’s florist.",
+     "req": false
+    },
+    {
+     "id": "candles",
+     "ch": "styling",
+     "name": "Candles and table styling",
+     "price": 300,
+     "unit": "flat",
+     "detail": "Candlesticks, glass holders and linen napkins in your colours.",
+     "req": false
+    },
+    {
+     "id": "rooms",
+     "ch": "stay",
+     "name": "Hold rooms for your guests",
+     "price": 0,
+     "unit": "flat",
+     "detail": "We’ll hold rooms nearby at a wedding rate. Guests book and pay for themselves.",
+     "req": false
+    }
+   ],
+   "rules": {
+    "finish": "Midnight, later by arrangement",
+    "limiter": "No",
+    "confetti": "Petals, outdoors only",
+    "candles": "In glass holders",
+    "fire": "Not allowed",
+    "suppliers": "Welcome, if they’re insured",
+    "drinks": "Packages from the venue"
+   },
+   "policyText": "Cancel at least 6 months before and get half your deposit back. After that, the deposit isn’t refundable."
+  },
+  {
+   "id": "pemb",
+   "name": "Pembroke Lodge",
+   "place": "Richmond Park, London",
+   "style": "Country house",
+   "cap": 140,
+   "hire": 3000,
+   "pp": 118,
+   "am": "Lily",
+   "policy": "Moderate",
+   "cuisine": [
+    "Modern British",
+    "Afternoon tea"
+   ],
+   "feats": [
+    "catering",
+    "veg",
+    "outdoor",
+    "parking"
+   ],
+   "web": "https://www.pembroke-lodge.co.uk/weddings/",
+   "cerName": "Ceremony under the Oak Gazebo",
+   "cerDetail": "Licensed outdoor gazebos and indoor suites, with ceremonies led by Richmond Register Office.",
+   "about": "A Georgian mansion in Richmond Park with wisteria at the door and licensed oak gazebos for outdoor ceremonies. Up to 140 for dinner.",
+   "area": "London",
+   "rating": null,
+   "reviews": 0,
+   "sample": true,
+   "tone": [
+    "#EFEAE2",
+    "#CFC3B2"
+   ],
+   "n": 6,
+   "booked": [],
+   "use": "Belvedere Suite",
+   "hireDetail": "Your spaces at Pembroke Lodge for the day and evening, with tables, chairs, linen and the events team.",
+   "photoFiles": [
+    "pemb-1.jpg",
+    "pemb-2.jpg"
+   ],
+   "hasEmbeddedPhotos": false,
+   "options": [
+    {
+     "id": "hire",
+     "ch": "venue",
+     "name": "Venue hire",
+     "price": 3000,
+     "unit": "flat",
+     "detail": "Your spaces at Pembroke Lodge for the day and evening, with tables, chairs, linen and the events team.",
+     "req": true
+    },
+    {
+     "id": "cer_room",
+     "ch": "ceremony",
+     "name": "Ceremony under the Oak Gazebo",
+     "price": 600,
+     "unit": "flat",
+     "detail": "Licensed outdoor gazebos and indoor suites, with ceremonies led by Richmond Register Office.",
+     "req": false
+    },
+    {
+     "id": "cer_garden",
+     "ch": "ceremony",
+     "name": "Garden ceremony",
+     "price": 750,
+     "unit": "flat",
+     "detail": "Outdoors in the gardens, with an indoor room kept ready in case it rains.",
+     "req": false
+    },
+    {
+     "id": "cer_none",
+     "ch": "ceremony",
+     "name": "Celebration only",
+     "price": 0,
+     "unit": "flat",
+     "detail": "You’re marrying somewhere else first, and joining your guests here afterwards.",
+     "req": false
+    },
+    {
+     "id": "quartet",
+     "ch": "ceremony",
+     "name": "String quartet",
+     "price": 550,
+     "unit": "flat",
+     "detail": "For your walk down the aisle and the drinks reception.",
+     "req": false
+    },
+    {
+     "id": "can3",
+     "ch": "ceremony",
+     "name": "Three canapés each",
+     "price": 9,
+     "unit": "pp",
+     "detail": "Passed round during the drinks reception. Chosen at your tasting.",
+     "req": false
+    },
+    {
+     "id": "can5",
+     "ch": "ceremony",
+     "name": "Five canapés each",
+     "price": 14,
+     "unit": "pp",
+     "detail": "A more generous reception, ideal if dinner is after 4pm.",
+     "req": false
+    },
+    {
+     "id": "dinner3",
+     "ch": "breakfast",
+     "name": "Three-course dinner",
+     "price": 118,
+     "unit": "pp",
+     "detail": "Seasonal starter, a choice of two mains and dessert. Halal and vegetarian versions of every course.",
+     "req": false
+    },
+    {
+     "id": "feast",
+     "ch": "breakfast",
+     "name": "Sharing feast",
+     "price": 112,
+     "unit": "pp",
+     "detail": "Platters down the middle of each table: slow-roast lamb, chicken, grains and salads, with a dessert table to finish.",
+     "req": false
+    },
+    {
+     "id": "d_none",
+     "ch": "drinks",
+     "name": "Pay at the bar",
+     "price": 0,
+     "unit": "pp",
+     "detail": "No package. Guests buy their own drinks from the venue bar.",
+     "req": false
+    },
+    {
+     "id": "d_classic",
+     "ch": "drinks",
+     "name": "Classic",
+     "price": 28,
+     "unit": "pp",
+     "detail": "A welcome drink, half a bottle of wine each with dinner, and sparkling wine for the toast.",
+     "req": false
+    },
+    {
+     "id": "d_sig",
+     "ch": "drinks",
+     "name": "Signature",
+     "price": 38,
+     "unit": "pp",
+     "detail": "Prosecco on arrival, premium wines with dinner, and champagne for the toast.",
+     "req": false
+    },
+    {
+     "id": "d_pres",
+     "ch": "drinks",
+     "name": "Prestige",
+     "price": 52,
+     "unit": "pp",
+     "detail": "Champagne all afternoon, wines chosen by a sommelier, and cocktails after dinner.",
+     "req": false
+    },
+    {
+     "id": "buffet",
+     "ch": "evening",
+     "name": "Evening buffet",
+     "price": 15,
+     "unit": "eve",
+     "detail": "Stone-baked pizzas or a grazing table from 8pm, for every evening guest.",
+     "req": false
+    },
+    {
+     "id": "dj",
+     "ch": "evening",
+     "name": "DJ, 7pm to midnight",
+     "price": 650,
+     "unit": "flat",
+     "detail": "The resident DJ with sound system and dance-floor lighting. Send your playlist in the app.",
+     "req": false
+    },
+    {
+     "id": "band",
+     "ch": "evening",
+     "name": "Live band",
+     "price": 1800,
+     "unit": "flat",
+     "detail": "A four-piece band for two 45-minute sets, with a DJ playlist in between.",
+     "req": false
+    },
+    {
+     "id": "dhol",
+     "ch": "evening",
+     "name": "Dhol drummers",
+     "price": 450,
+     "unit": "flat",
+     "detail": "Two drummers for your grand entrance, about 20 minutes.",
+     "req": false
+    },
+    {
+     "id": "lights",
+     "ch": "styling",
+     "name": "Uplighting and fairy lights",
+     "price": 400,
+     "unit": "flat",
+     "detail": "Warm-white uplighters in the ceremony room and hall, with a fairy-light canopy over the dance floor.",
+     "req": false
+    },
+    {
+     "id": "florals",
+     "ch": "styling",
+     "name": "Table flowers and a ceremony arch",
+     "price": 950,
+     "unit": "flat",
+     "detail": "Seasonal flowers for every table and an arch for your ceremony, by the venue’s florist.",
+     "req": false
+    },
+    {
+     "id": "candles",
+     "ch": "styling",
+     "name": "Candles and table styling",
+     "price": 300,
+     "unit": "flat",
+     "detail": "Candlesticks, glass holders and linen napkins in your colours.",
+     "req": false
+    },
+    {
+     "id": "rooms",
+     "ch": "stay",
+     "name": "Hold rooms for your guests",
+     "price": 0,
+     "unit": "flat",
+     "detail": "We’ll hold rooms nearby at a wedding rate. Guests book and pay for themselves.",
+     "req": false
+    }
+   ],
+   "rules": {
+    "finish": "Midnight",
+    "limiter": "Yes",
+    "confetti": "Petals, outdoors only",
+    "candles": "In glass holders",
+    "fire": "Not allowed",
+    "suppliers": "Welcome, if they’re insured",
+    "drinks": "Packages from the venue"
+   },
+   "policyText": "Cancel at least 6 months before and get half your deposit back. After that, the deposit isn’t refundable."
+  },
+  {
+   "id": "mandarin",
+   "sample": true,
+   "web": "https://www.mandarinoriental.com/en/london/hyde-park/celebrate",
+   "use": "Private ballroom",
+   "hireDetail": "The ballroom for the day and evening, overlooking Hyde Park, with its own terrace and a wedding planner from the hotel.",
+   "cerName": "Ceremony in the Carlyle Suite",
+   "cerDetail": "Licensed for civil ceremonies for up to 200 guests. Includes chairs, an aisle runner and a table for the registrar.",
+   "cuisine": [
+    "Bespoke menus",
+    "Asian",
+    "Kosher",
+    "Halal"
+   ],
+   "name": "Mandarin Oriental Hyde Park",
+   "area": "London",
+   "place": "Knightsbridge, London",
+   "style": "Hotel",
+   "cap": 250,
+   "hire": 9500,
+   "pp": 140,
+   "rating": null,
+   "reviews": 0,
+   "am": "Charlotte",
+   "policy": "Moderate",
+   "tone": [
+    "#EFEAE2",
+    "#CFC3B2"
+   ],
+   "n": 6,
+   "feats": [
+    "catering",
+    "halal",
+    "veg",
+    "suite",
+    "rooms",
+    "parking"
+   ],
+   "booked": [],
+   "about": "A Knightsbridge landmark overlooking Hyde Park. The ballroom opens onto the park, guests can arrive through the Royal Entrance, and the hotel will fly flags with your names as you arrive.",
+   "photoFiles": [],
+   "hasEmbeddedPhotos": true,
+   "options": [
+    {
+     "id": "hire",
+     "ch": "venue",
+     "name": "Venue hire",
+     "price": 9500,
+     "unit": "flat",
+     "detail": "The ballroom for the day and evening, overlooking Hyde Park, with its own terrace and a wedding planner from the hotel.",
+     "req": true
+    },
+    {
+     "id": "cer_room",
+     "ch": "ceremony",
+     "name": "Ceremony in the Carlyle Suite",
+     "price": 600,
+     "unit": "flat",
+     "detail": "Licensed for civil ceremonies for up to 200 guests. Includes chairs, an aisle runner and a table for the registrar.",
+     "req": false
+    },
+    {
+     "id": "cer_none",
+     "ch": "ceremony",
+     "name": "Celebration only",
+     "price": 0,
+     "unit": "flat",
+     "detail": "You’re marrying somewhere else first, and joining your guests here afterwards.",
+     "req": false
+    },
+    {
+     "id": "quartet",
+     "ch": "ceremony",
+     "name": "String quartet",
+     "price": 550,
+     "unit": "flat",
+     "detail": "For your walk down the aisle and the drinks reception.",
+     "req": false
+    },
+    {
+     "id": "can3",
+     "ch": "ceremony",
+     "name": "Three canapés each",
+     "price": 9,
+     "unit": "pp",
+     "detail": "Passed round during the drinks reception. Chosen at your tasting.",
+     "req": false
+    },
+    {
+     "id": "can5",
+     "ch": "ceremony",
+     "name": "Five canapés each",
+     "price": 14,
+     "unit": "pp",
+     "detail": "A more generous reception, ideal if dinner is after 4pm.",
+     "req": false
+    },
+    {
+     "id": "dinner3",
+     "ch": "breakfast",
+     "name": "Three-course dinner",
+     "price": 140,
+     "unit": "pp",
+     "detail": "Seasonal starter, a choice of two mains and dessert. Halal and vegetarian versions of every course.",
+     "req": false
+    },
+    {
+     "id": "feast",
+     "ch": "breakfast",
+     "name": "Sharing feast",
+     "price": 134,
+     "unit": "pp",
+     "detail": "Platters down the middle of each table: slow-roast lamb, chicken, grains and salads, with a dessert table to finish.",
+     "req": false
+    },
+    {
+     "id": "d_none",
+     "ch": "drinks",
+     "name": "Pay at the bar",
+     "price": 0,
+     "unit": "pp",
+     "detail": "No package. Guests buy their own drinks from the venue bar.",
+     "req": false
+    },
+    {
+     "id": "d_classic",
+     "ch": "drinks",
+     "name": "Classic",
+     "price": 28,
+     "unit": "pp",
+     "detail": "A welcome drink, half a bottle of wine each with dinner, and sparkling wine for the toast.",
+     "req": false
+    },
+    {
+     "id": "d_sig",
+     "ch": "drinks",
+     "name": "Signature",
+     "price": 38,
+     "unit": "pp",
+     "detail": "Prosecco on arrival, premium wines with dinner, and champagne for the toast.",
+     "req": false
+    },
+    {
+     "id": "d_pres",
+     "ch": "drinks",
+     "name": "Prestige",
+     "price": 52,
+     "unit": "pp",
+     "detail": "Champagne all afternoon, wines chosen by a sommelier, and cocktails after dinner.",
+     "req": false
+    },
+    {
+     "id": "buffet",
+     "ch": "evening",
+     "name": "Evening buffet",
+     "price": 15,
+     "unit": "eve",
+     "detail": "Stone-baked pizzas or a grazing table from 8pm, for every evening guest.",
+     "req": false
+    },
+    {
+     "id": "dj",
+     "ch": "evening",
+     "name": "DJ, 7pm to midnight",
+     "price": 650,
+     "unit": "flat",
+     "detail": "The resident DJ with sound system and dance-floor lighting. Send your playlist in the app.",
+     "req": false
+    },
+    {
+     "id": "band",
+     "ch": "evening",
+     "name": "Live band",
+     "price": 1800,
+     "unit": "flat",
+     "detail": "A four-piece band for two 45-minute sets, with a DJ playlist in between.",
+     "req": false
+    },
+    {
+     "id": "dhol",
+     "ch": "evening",
+     "name": "Dhol drummers",
+     "price": 450,
+     "unit": "flat",
+     "detail": "Two drummers for your grand entrance, about 20 minutes.",
+     "req": false
+    },
+    {
+     "id": "lights",
+     "ch": "styling",
+     "name": "Uplighting and fairy lights",
+     "price": 400,
+     "unit": "flat",
+     "detail": "Warm-white uplighters in the ceremony room and hall, with a fairy-light canopy over the dance floor.",
+     "req": false
+    },
+    {
+     "id": "florals",
+     "ch": "styling",
+     "name": "Table flowers and a ceremony arch",
+     "price": 950,
+     "unit": "flat",
+     "detail": "Seasonal flowers for every table and an arch for your ceremony, by the venue’s florist.",
+     "req": false
+    },
+    {
+     "id": "candles",
+     "ch": "styling",
+     "name": "Candles and table styling",
+     "price": 300,
+     "unit": "flat",
+     "detail": "Candlesticks, glass holders and linen napkins in your colours.",
+     "req": false
+    },
+    {
+     "id": "suite",
+     "ch": "stay",
+     "name": "Bridal suite for the night",
+     "price": 0,
+     "unit": "flat",
+     "detail": "Included with your venue hire, with breakfast the next morning.",
+     "req": false
+    },
+    {
+     "id": "rooms",
+     "ch": "stay",
+     "name": "Hold rooms for your guests",
+     "price": 0,
+     "unit": "flat",
+     "detail": "We’ll hold rooms nearby at a wedding rate. Guests book and pay for themselves.",
+     "req": false
+    }
+   ],
+   "rules": {
+    "finish": "Midnight, under the late licence",
+    "limiter": "No",
+    "confetti": "Petals only, on the terrace",
+    "candles": "In glass holders",
+    "fire": "Not allowed",
+    "suppliers": "From the hotel’s recommended list",
+    "drinks": "Packages chosen with the sommelier"
+   },
+   "policyText": "Cancel at least 6 months before and get half your deposit back. After that, the deposit isn’t refundable."
+  }
+ ],
+ "chapters": [
+  [
+   "numbers",
+   "Your guests",
+   "Who’s coming, and when"
+  ],
+  [
+   "ceremony",
+   "Ceremony and drinks",
+   "The first part of your day"
+  ],
+  [
+   "breakfast",
+   "Wedding breakfast",
+   "Your meal together"
+  ],
+  [
+   "drinks",
+   "Drinks package",
+   "From the welcome drink to the toast"
+  ],
+  [
+   "evening",
+   "The evening",
+   "Food, music and dancing"
+  ],
+  [
+   "styling",
+   "Styling",
+   "How the rooms look and feel"
+  ],
+  [
+   "stay",
+   "Staying over",
+   "For you and your guests"
+  ]
+ ],
+ "feats": {
+  "catering": "In-house catering",
+  "halal": "Halal menus",
+  "veg": "Vegetarian menus",
+  "outside": "Outside caterers welcome",
+  "outdoor": "Outdoor ceremony",
+  "late": "Late licence to 1am",
+  "suite": "Bridal suite",
+  "rooms": "Rooms on site",
+  "parking": "Parking on site"
+ },
+ "styles": [
+  "Country house",
+  "Hotel",
+  "Palace",
+  "Historic",
+  "Museum",
+  "Garden",
+  "Barn",
+  "City",
+  "Coastal"
+ ],
+ "policy": {
+  "Flexible": "Cancel at least 3 months before and get your deposit back, apart from 8% of the package. After that, the deposit isn’t refundable.",
+  "Moderate": "Cancel at least 6 months before and get half your deposit back. After that, the deposit isn’t refundable.",
+  "Strict": "The deposit isn’t refundable. Payments after the deposit are refunded if you cancel 9 months before."
+ }
+}
