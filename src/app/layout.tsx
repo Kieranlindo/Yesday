@@ -1,12 +1,13 @@
 import type { Metadata, Viewport } from 'next';
 import GetTheApp from '@/components/GetTheApp';
+import Toaster from '@/components/fx/Toaster';
 import './globals.css';
 
 export const metadata: Metadata = {
   title: { default: 'Yesday · Wedding venues with real prices and live dates', template: '%s · Yesday' },
   description: 'Find a wedding venue in London with real prices and live dates, book a custom tour, and secure your date online.',
 };
-export const viewport: Viewport = { themeColor: '#FBF8F1', viewportFit: 'cover' };
+export const viewport: Viewport = { themeColor: '#FFFFFF', viewportFit: 'cover' };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <div className="site">{children}</div>
+        <Toaster />
         <GetTheApp />
       </body>
     </html>
