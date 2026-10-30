@@ -1,18 +1,23 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import { and, eq } from 'drizzle-orm';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
+import Heart from '@/components/fx/Heart';
+import Gallery from '@/components/builder/Gallery';
+import PackageBuilder, { type BuilderVenue } from '@/components/builder/PackageBuilder';
 import { currentUser } from '@/lib/auth';
+import { db, schema } from '@/db';
 import { getVenue, dateStateFor, likedIds } from '@/lib/venues';
 import { readSearch, searchQuery } from '@/lib/search-params';
-import { dayLong, dayShort } from '@/lib/dates';
-import { pounds } from '@/lib/money';
-import { CHAPTERS, FEATURES, RULES, UNIT } from '@/lib/labels';
-import { depositFor, hireForDay, lineTotal, POLICY_TEXT, STARTER_PACKAGE, type Unit } from '@/lib/rules';
-import { toggleLike } from '@/app/actions';
+import { londonToday, tourDays } from '@/lib/dates';
+import { FEATURES, RULES } from '@/lib/labels';
+import { POLICY_TEXT, type Unit } from '@/lib/rules';
+import { decodeCodes } from '@/lib/package';
 
 type Props = { params: Promise<{ slug: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> };
+const one = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v);
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const data = await getVenue((await params).slug);
@@ -24,20 +29,32 @@ export default async function VenuePage({ params, searchParams }: Props) {
   const data = await getVenue(slug);
   if (!data || data.venue.status !== 'live') notFound();
   const { venue: v, photos, options } = data;
-  const q = readSearch(await searchParams);
+  const sp = await searchParams;
+  const q = readSearch(sp);
   const [u, date] = await Promise.all([currentUser(), dateStateFor(v.id, q.day)]);
   const liked = u ? (await likedIds(u.id)).has(v.id) : false;
-  const free = !date;
-  const back = `/venues/${v.slug}?${searchQuery(q)}`;
 
-  const hire = hireForDay(v.hireBasePence, q.day, date?.pricePence);
-  const lines = options.filter(o => STARTER_PACKAGE.includes(o.code)).map(o => ({
-    name: o.chapter === 'drinks' ? `${o.name} drinks` : o.name, pence: o.code === 'hire' ? hire : lineTotal({ pricePence: o.pricePence, unit: o.unit as Unit }, q.guests, q.evening),
+  // Where the package starts: a shared link, then the couple's saved package, then our suggested day.
+  const shared = decodeCodes(one(sp.pkg));
+  const [saved] = u && !shared.length ? await db.select().from(schema.packages).where(and(eq(schema.packages.coupleId, u.id), eq(schema.packages.venueId, v.id))).limit(1) : [];
+  const kidsParam = Number.parseInt(one(sp.kids) ?? '', 10);
+  const hasNumbers = !!one(sp.guests) || !!one(sp.date);
+  const numbers = saved && !hasNumbers
+    ? { day: saved.weddingDate > londonToday() ? saved.weddingDate : q.day, guests: saved.guests, evening: saved.eveningGuests, kids: saved.kids }
+    : { day: q.day, guests: q.guests, evening: q.evening, kids: Number.isFinite(kidsParam) ? Math.min(60, Math.max(0, kidsParam)) : saved?.kids ?? 0 };
+  const dayState = numbers.day === q.day ? date : await dateStateFor(v.id, numbers.day);
+
+  const shortName = v.name.replace(/^The /, '');
+  const venue: BuilderVenue = {
+    id: v.id, slug: v.slug, name: v.name, shortName, place: v.place, capacityDinner: v.capacityDinner, capacityEvening: v.capacityEvening,
+    hireBasePence: v.hireBasePence, depositPercent: v.depositPercent, licensed: !!v.ceremonyName, manager: v.managerName, managerPhoto: v.managerPhoto, spaces: v.spacesSummary,
+  };
+  const opts = options.map(o => ({
+    code: o.code, chapter: o.chapter, name: o.name, pricePence: o.pricePence, unit: o.unit as Unit, required: o.required,
+    detail: o.code === 'hire' ? `${o.detail}${v.spacesSummary ? ` ${v.spacesSummary}.` : ''}` : o.code === 'cer_room' && v.ceremonyDetail ? v.ceremonyDetail : o.detail,
   }));
-  const total = lines.reduce((s, l) => s + l.pence, 0);
-  const deposit = depositFor(total, v.depositPercent);
-  const chapters = Object.keys(CHAPTERS).map(c => [c, options.filter(o => o.chapter === c)] as const).filter(([, list]) => list.length);
-  const fit = q.guests <= v.capacityDinner;
+  const back = `/venues/${v.slug}?${searchQuery(q)}`;
+  const policyColour = { Flexible: 'var(--ok)', Moderate: '#B5651D', Strict: 'var(--rose)' }[v.policy];
 
   return (
     <>
@@ -47,93 +64,49 @@ export default async function VenuePage({ params, searchParams }: Props) {
           <div className="col g12">
             <span className="eyebrow">{v.place}</span>
             <h1>{v.name}</h1>
-            <p className="muted">{v.style}<span className="sep" />Up to {v.capacityDinner} for dinner{v.capacityEvening ? <><span className="sep" />{v.capacityEvening} in the evening</> : null}</p>
+            <p className="muted">{v.style}<span className="sep" />Up to {v.capacityDinner} for dinner{v.capacityEvening ? <><span className="sep" />{v.capacityEvening} in the evening</> : null}{v.ceremonyName ? <><span className="sep" />Licensed for weddings</> : null}</p>
           </div>
           <div className="row g12">
-            <form action={toggleLike}>
-              <input type="hidden" name="venueId" value={v.id} /><input type="hidden" name="back" value={back} />
-              <button className="btn o" aria-pressed={liked}>{liked ? 'Liked' : 'Like this venue'}</button>
-            </form>
+            <Heart venueId={v.id} name={v.name} liked={liked} back={back} variant="pill" />
             <Link className="btn o" href={`/search?${searchQuery(q)}`}>Back to results</Link>
           </div>
         </div>
 
-        <div className={`gal${photos.length === 2 ? ' two' : ''}`}>
-          {photos.slice(0, 3).map((p, i) => <img key={p.id} src={p.url} alt={p.alt || (i ? '' : v.name)} />)}
-        </div>
+        <Gallery photos={photos.map(p => ({ url: p.url, alt: p.alt }))} name={v.name} />
 
-        <div className="vbody">
-          <div className="col">
-            <section className="vsec">
-              <p style={{ fontSize: 20, lineHeight: 1.6, maxWidth: 720 }}>{v.about}</p>
-              {v.features.length > 0 && <div className="feats">{v.features.map(f => <p key={f}>{FEATURES[f] ?? f}</p>)}</div>}
+        <section className="vintro" data-reveal>
+          <p className="lede">{v.about}</p>
+          {v.features.length > 0 && <div className="feats">{v.features.map(f => <p key={f}>{FEATURES[f] ?? f}</p>)}</div>}
+        </section>
+
+        <PackageBuilder
+          venue={venue}
+          options={opts}
+          start={{
+            numbers, codes: shared.length ? ['hire', ...shared] : saved?.codes ?? null, free: !dayState, overridePence: dayState?.pricePence ?? null,
+            today: londonToday(), tourDays: tourDays(), signedIn: !!u, isCouple: !!u && (u.role === 'couple' || u.role === 'admin'), savedOnServer: !!saved && !shared.length,
+            fromShare: shared.length > 0, openTour: one(sp.tour) === '1',
+          }}
+        />
+
+        <div className="vmore">
+          {v.practical.length > 0 && (
+            <section className="vsec" data-reveal>
+              <h2>Getting there and good to know</h2>
+              <dl className="kv">{v.practical.map(([k, val]) => [<dt key={`${k}t`}>{k}</dt>, <dd key={`${k}d`}>{val}</dd>])}</dl>
             </section>
-
-            {chapters.map(([c, list]) => (
-              <section key={c} className="vsec">
-                <h2>{CHAPTERS[c]}</h2>
-                <div className="opts">
-                  {list.map(o => (
-                    <div key={o.id} className="o">
-                      <span className="b">{o.name}{STARTER_PACKAGE.includes(o.code) && <span className="pill gold" style={{ marginLeft: 10 }}>In the starting package</span>}</span>
-                      <span className="num" style={{ textAlign: 'right' }}>{o.code === 'hire' ? pounds(hire) : o.pricePence ? `${pounds(o.pricePence)}${UNIT[o.unit]}` : 'Included'}</span>
-                      <span className="small muted" style={{ gridColumn: '1 / -1', maxWidth: 640 }}>{o.code === 'hire' ? `${o.detail} Priced for ${dayLong(q.day)}.` : o.detail}</span>
-                    </div>
-                  ))}
-                </div>
-              </section>
-            ))}
-
-            {v.practical.length > 0 && (
-              <section className="vsec">
-                <h2>Getting there and good to know</h2>
-                <dl className="kv">{v.practical.map(([k, val]) => [<dt key={`${k}t`}>{k}</dt>, <dd key={`${k}d`}>{val}</dd>])}</dl>
-              </section>
-            )}
-            {Object.keys(v.rules).length > 0 && (
-              <section className="vsec">
-                <h2>House rules</h2>
-                <dl className="kv">{Object.entries(v.rules).map(([k, val]) => [<dt key={`${k}t`}>{RULES[k] ?? k}</dt>, <dd key={`${k}d`}>{val}</dd>])}</dl>
-              </section>
-            )}
-            <section className="vsec">
-              <h2>If plans change</h2>
-              <p className="muted" style={{ maxWidth: 680, lineHeight: 1.6 }}><span className="b" style={{ color: 'var(--ink)' }}>{v.policy} cancellation.</span> {POLICY_TEXT[v.policy]}</p>
+          )}
+          {Object.keys(v.rules).length > 0 && (
+            <section className="vsec" data-reveal>
+              <h2>House rules</h2>
+              <dl className="kv">{Object.entries(v.rules).map(([k, val]) => [<dt key={`${k}t`}>{RULES[k] ?? k}</dt>, <dd key={`${k}d`}>{val}</dd>])}</dl>
             </section>
-          </div>
-
-          <aside className="rail" aria-label="Your date and price">
-            <div className="card book">
-              <form action={`/venues/${v.slug}`} className="col g12">
-                <div className="row between g12">
-                  <span className="pill" style={{ background: free ? 'var(--okbg)' : 'var(--rosebg)', color: free ? 'var(--ok)' : 'var(--rose)' }}>{free ? `Free on ${dayShort(q.day)}` : `Booked on ${dayShort(q.day)}`}</span>
-                  <span className="small muted">{q.guests} guests, {q.evening} evening</span>
-                </div>
-                <div className="railf">
-                  <label className="field full"><span className="tiny muted">Wedding date</span><input className="inp" type="date" name="date" defaultValue={q.day} /></label>
-                  <label className="field"><span className="tiny muted">Day guests</span><input className="inp" type="number" name="guests" min={10} max={500} defaultValue={q.guests} /></label>
-                  <label className="field"><span className="tiny muted">Evening guests</span><input className="inp" type="number" name="evening" min={0} max={500} defaultValue={q.evening} /></label>
-                </div>
-                <button className="btn o sm" type="submit">Update the price</button>
-              </form>
-
-              <div className="col g4">
-                <span className="small muted">Your full day, as it stands</span>
-                <span className="pp num">{pounds(total)}</span>
-              </div>
-              <div className="lines">
-                {lines.map(l => <div key={l.name} className="ln"><span>{l.name}</span><span className="num">{pounds(l.pence)}</span></div>)}
-                <div className="ln tot"><span>Deposit to secure the date</span><span className="num">{pounds(deposit)}</span></div>
-              </div>
-              {!fit && <p className="err">{v.name} seats up to {v.capacityDinner} for dinner, fewer than your {q.guests} guests.</p>}
-              <p className="notice small">Custom tours and online booking arrive in the next stages of the build.</p>
-              <p className="tiny muted">The rest is paid monthly, finishing eight weeks before the day.</p>
-            </div>
-            <div className="card am">
-              {v.managerPhoto ? <img className="pic" src={v.managerPhoto} alt="" /> : <span className="pic av" style={{ width: 54, height: 54 }}>{v.managerName[0]}</span>}
-              <div className="col g4"><span className="b">{v.managerName} looks after weddings here</span><span className="small muted">Replies within a day</span></div>
-            </div>
-          </aside>
+          )}
+          <section className="vsec" data-reveal>
+            <h2>If plans change</h2>
+            <span className={`pol${v.policy === 'Strict' ? ' strict' : ''}`} style={{ ['--pc' as string]: policyColour }}><span className="pd" />{v.policy} cancellation</span>
+            <p className="muted" style={{ maxWidth: 680, lineHeight: 1.6 }}>{POLICY_TEXT[v.policy]}</p>
+          </section>
         </div>
       </main>
       <Footer />
