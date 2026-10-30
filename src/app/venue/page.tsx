@@ -5,6 +5,7 @@ import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import { requireUser } from '@/lib/auth';
 import { db, schema } from '@/db';
+import { nameCase } from '@/lib/labels';
 
 export const metadata: Metadata = { title: 'Your venue' };
 
@@ -17,7 +18,7 @@ export default async function VenueHome() {
       <main className="wrap results" style={{ minHeight: '60vh' }}>
         <div className="col g8">
           <span className="eyebrow">Yesday for venues</span>
-          <h1 style={{ fontSize: 56, lineHeight: 1.02 }}>Welcome, {u.firstName}</h1>
+          <h1 style={{ fontSize: 56, lineHeight: 1.02 }}>Welcome, {nameCase(u.firstName)}</h1>
         </div>
         {mine.length ? (
           <div className="col g12">{mine.map(m => <Link key={m.slug} className="card am" href={`/venues/${m.slug}`}><span className="b">{m.name}</span><span className="pill gold">{m.status === 'live' ? 'Live' : m.status === 'paused' ? 'Paused' : 'Draft'}</span></Link>)}</div>
