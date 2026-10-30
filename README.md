@@ -24,4 +24,4 @@ Checks: `npm run typecheck` and `node --import tsx --test tests/*.test.ts`.
 
 Set these in the Vercel project's environment variables, never in the code:
 `DATABASE_URL`, `SESSION_SECRET`, `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`, `STRIPE_SECRET_KEY`.
-Run `npm run db:migrate` and `npm run db:seed` once against the Supabase database.
+To set up the Supabase database the first time, paste `supabase/setup.sql` into Supabase's SQL Editor and run it once. It creates the tables and adds the sample venues. Later changes to the database come as new migrations.
