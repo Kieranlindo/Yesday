@@ -21,6 +21,6 @@ export async function GET() {
     const err = e as { message?: string; code?: string; cause?: { message?: string; code?: string } };
     const pw = (() => { try { return decodeURIComponent(new URL(raw).password); } catch { return ''; } })();
     const clean = (s?: string) => (s && pw ? s.split(pw).join('•••') : s);
-    return NextResponse.json({ ok: false, error: clean(err.message), code: err.code, cause: clean(err.cause?.message), causeCode: err.cause?.code, ...info }, { status: 500 });
+    return NextResponse.json({ ok: false, error: clean(err.message), code: err.code, cause: clean(err.cause?.message), causeCode: err.cause?.code, ...info });
   }
 }
