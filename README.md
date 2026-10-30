@@ -25,3 +25,14 @@ Checks: `npm run typecheck` and `node --import tsx --test tests/*.test.ts`.
 Set these in the Vercel project's environment variables, never in the code:
 `DATABASE_URL`, `SESSION_SECRET`, `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`, `STRIPE_SECRET_KEY`.
 To set up the Supabase database the first time, paste `supabase/setup.sql` into Supabase's SQL Editor and run it once. It creates the tables and adds the sample venues. Later changes to the database come as new migrations.
+
+**Build 2** adds tables for couples' plans and saved packages, and new columns on tours. Paste `supabase/build-2.sql` into the SQL Editor and run it once (it's safe to run again). It also lifts every venue's deposit to at least 20%.
+
+## What's in Build 2
+
+- **The package builder** on every venue page: every option can be chosen, the total rolls to its new price as you go, with a per-guest view, the 20% deposit and the monthly plan. Packages save as you go (to the couple's account, or to the browser until they sign up) and can be shared as a link.
+- **Custom tours**: a drawer to pick what to see, a day and a time; the wedding date is held for 24 hours after the tour, with a live countdown, a calendar file and an after-the-tour rating.
+- **Tell us about your day** (`/start`) after sign-up, and **Your wedding** (`/my`): countdown, tours, saved packages, liked venues and side-by-side compare (`/compare`).
+- **Search filters** for style, budget, and food, faith and must-haves.
+- **The feel**: the gold signature on first visit, page fades, scroll reveals, a photo viewer, heart pops, toasts, skeleton loading and a confetti moment when a tour is booked.
+- Booking rules: deposits are at least 20% everywhere, and our fee is never refunded when a couple cancels; it always comes out of what the venue keeps.
