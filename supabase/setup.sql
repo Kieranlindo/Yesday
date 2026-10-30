@@ -206,7 +206,6 @@ create table if not exists drizzle.__drizzle_migrations (id serial primary key, 
 insert into drizzle.__drizzle_migrations (hash, created_at) values ('359620f8415235b794a5f1693345fe520065bf6233824b4cbf45839141ca3005', 1793386274108);
 
 -- Sample venues
-\restrict ZxceSrepfpnpH6tfdjO7x7rVQQNC63dGPFHvgbIGcEz8hVKrkXcptGN15Dwj7NN
 INSERT INTO public.venues VALUES
 	('a0e6edc8-9411-49da-9872-7f93ed378012', 'old-royal-naval-college', NULL, 'live', true, 'Old Royal Naval College', 'Greenwich, London', 'London', 'Historic', 'Wren’s riverside masterpiece in Greenwich. Marry in the chapel, then dine beneath the Painted Hall’s ceiling, often called Britain’s Sistine Chapel.', 'https://ornc.org/venue-hire/weddings/', 300, 450, 1250000, 'Painted Hall and Chapel', 'Ceremony in the Chapel', 'Licensed for civil ceremonies. Includes chairs, an aisle runner and a table for the registrar.', 'Your spaces at Old Royal Naval College for the day and evening, with tables, chairs, linen and the events team.', '{"Seasonal British","Bespoke menus"}', '{catering,veg,halal,outdoor,parking}', '[]', '{"fire": "Not allowed", "drinks": "Packages from the venue", "finish": "Midnight", "candles": "In glass holders", "limiter": "Yes", "confetti": "Petals, outdoors only", "suppliers": "Welcome, if they’re insured"}', 'Moderate', 25, 'Eleanor', NULL, '2026-10-30 18:52:52.857759+00'),
 	('57db0f4b-89f6-4f7e-8410-01fb486cf21d', 'banqueting-house', NULL, 'live', true, 'Banqueting House', 'Whitehall, London', 'London', 'Palace', 'The last surviving part of the Palace of Whitehall, with a Rubens ceiling above the Main Hall. Up to 300 for dinner, in the heart of royal London.', 'https://www.hrp.org.uk/banqueting-house/hire-a-venue/weddings/', 300, 450, 1500000, 'Main Hall and Undercroft', 'Ceremony in the Undercroft', 'The vaulted Undercroft is licensed for up to 150. Larger ceremonies can be held in the Main Hall, for up to 400.', 'Your spaces at Banqueting House for the day and evening, with tables, chairs, linen and the events team.', '{"Bespoke menus","Seasonal British"}', '{catering,veg,halal}', '[]', '{"fire": "Not allowed", "drinks": "Packages from the venue", "finish": "Midnight", "candles": "In glass holders", "limiter": "Yes", "confetti": "Petals, outdoors only", "suppliers": "Welcome, if they’re insured"}', 'Strict', 25, 'Imogen', NULL, '2026-10-30 18:52:52.857759+00'),
@@ -488,6 +487,5 @@ INSERT INTO public.venue_photos VALUES
 	('8de54f49-1de6-4cf5-941b-c453e373feee', '1adefe2e-9eb7-4ca8-9705-208252e174fa', '/photos/fulham-3.jpg', 1200, 753, 'Fulham Palace, photo 3', 2),
 	('2ceda446-da81-4135-b254-ad1bb04fef60', '58cb67f8-f6af-4903-9849-44debc3375f3', '/photos/pemb-1.jpg', 1200, 753, 'Pembroke Lodge, photo 1', 0),
 	('43ac6c71-66da-42bb-9a76-e733f5b79334', '58cb67f8-f6af-4903-9849-44debc3375f3', '/photos/pemb-2.jpg', 1200, 753, 'Pembroke Lodge, photo 2', 1);
-\unrestrict ZxceSrepfpnpH6tfdjO7x7rVQQNC63dGPFHvgbIGcEz8hVKrkXcptGN15Dwj7NN
 
 commit;
